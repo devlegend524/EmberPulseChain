@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "NippoBold";
+  src: local("NippoBold"),
+    url("/public/fonts//NippoBold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "NippoExtralight";
+  src: local("NippoExtralight"),
+    url("/public/fonts//NippoExtralight.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "NippoLight";
+  src: local("NippoLight"),
+    url("/public/fonts//NippoLight.ttf") format("opentype");
+}
+
+::-webkit-scrollbar {
+  @apply w-0.5 rounded-full;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-symbol/10;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-symbolHover;
+}
+
+body {
+  @apply min-h-screen m-0 bg-primary text-gray-300;
+}
+
+.buy_card {
+  @apply p-6 bg-primary/40 rounded-lg w-full;
+}
+
+.main_btn {
+  @apply py-2 text-white font-semibold rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105;
+  background-image: linear-gradient(
+    210deg,
+    #00eaff 0%,
+    #0080ff 25%,
+    #8000ff 50%,
+    #e619e6 75%,
+    #f00 100%
+  );
+}
+
+/* .main_btn::before {
+  @apply content-[''] absolute h-full  bg-[#e619e6]/10 w-0 top-0 transition-all duration-500 rounded-full;
+}
+
+.main_btn::before:hover {
+  @apply w-full right-auto left-0 rounded-full;
+} */
+
+.tr {
+  @apply bg-secondary border-t border-[#20334b] cursor-pointer last:rounded-b-lg hover:bg-primary transition ease-in-out;
+}
+
+.action_panel_container {
+  @apply flex flex-col md:flex-row justify-between p-2 lg:p-3 w-full last:rounded-lg bg-primary;
+}
+
+.action_panel {
+  @apply flex flex-row md:flex-col items-center md:items-start justify-between md:justify-center w-full lg:w-1/4;
+}
+
+.tab_panel {
+  @apply lg:w-[370px] w-[270px] h-12 lg:h-14 rounded-full bg-secondary mb-2 flex justify-center p-1;
+}
+
+.tab_panel .tab_button {
+  @apply w-1/2 h-full rounded-full flex justify-center items-center cursor-pointer hover:text-symbol;
+}
+
+.tab_panel .tab_button.active {
+  @apply text-symbol  bg-primary border border-symbol;
+}
+
+.nav_action {
+  @apply flex justify-end items-center;
+}
+
+.nav_action p {
+  @apply text-symbol;
+}
+
+.nav_action button {
+  @apply ml-4;
+}
+
+.nav_action button img {
+  @apply w-[40px] h-[40px];
+}
+
+.nav_action .btn_connect {
+  @apply w-[156px] h-[40px] rounded-full text-black;
+}
+
+.card {
+  @apply rounded-xl bg-secondary py-8 px-6 w-full max-w-[540px] m-8;
+}
+
+.pulse_bg {
+  background-image: linear-gradient(
+    210deg,
+    #00eaff 0%,
+    #0080ff 25%,
+    #8000ff 50%,
+    #e619e6 75%,
+    #f00 100%
+  );
+}
+
+.IKcpG {
+  background: #111c29!important;
+  border-bottom: 1px solid #347cf70f!important;
+}
+
+.hllvoW {
+  background: #111c29!important;
+}
+
+.haxTeh {
+  border: 1px solid #31455de0!important;
+  box-shadow: none!important;
+  background: none!important;
+}
+
+.circle_animation {
+  animation: spin 5s linear infinite;
+
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+td {
+  @apply p-0;
+}
+
+.bounce_animation {
+  animation: bounce 2.6s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

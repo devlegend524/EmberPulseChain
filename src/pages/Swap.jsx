@@ -168,7 +168,7 @@ export default function Swap() {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)]">
-      <div className="fixed top-[28%] left-[60%] -z-20 w-full md:w-1/4 h-full opacity-10 duration-300">
+      <div className="fixed top-[44%] left-[15%] -z-10 w-full md:w-1/4 h-full opacity-10 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 

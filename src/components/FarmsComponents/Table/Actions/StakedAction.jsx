@@ -50,6 +50,10 @@ const StakedAction = ({
   withDepositLockDiscount,
   depositFee,
   userData,
+  isActive,
+  link,
+  lpLabel,
+  scan,
 }) => {
   const [amountPerNFT, setAmountPerNFT] = useState();
   const [isNFTALL, setIsNFTALL] = useState(false);
@@ -266,20 +270,37 @@ const StakedAction = ({
   }
 
   return (
-    <div className="flex flex-row md:flex-col justify-between md:justify-center items-center gap-4 p-2 lg:p-4 w-full">
+    <div className="flex flex-row md:flex-col justify-between md:justify-center gap-4 p-2 lg:p-4 w-ful bg-[#050506] border border-[#292524] rounded-xl">
       <div className="flex justify-center font-semibold text-xl w-full">
         {t("Stake").toUpperCase()} {lpSymbol}
       </div>
-      <div className="flex w-full justify-center">
+      <div className="flex grid grid-cols-2 gap-2 w-full justify-center">
         <button
           onClick={onPresentDeposit}
           disabled={["history", "archived"].some((item) =>
             location.pathname.includes(item)
           )}
-          className="rounded-md p-1  text-center text-white font-medium banner_btn hover:text-gray-500  max-w-[200px] w-full"
+          className="rounded-md p-1 text-center text-white font-medium banner_btn p-2 hover:text-gray-500 w-full"
         >
           {t("Stake")}
         </button>
+
+        {isActive && (
+          <a
+            className="farm_url flex justify-center items-center px-4"
+            href={link}
+            target="_blank"
+          >
+            Get {lpLabel}
+          </a>
+        )}
+        <a
+          className="farm_url flex justify-center items-center px-4"
+          href={scan}
+          target="_blank"
+        >
+          View Contract
+        </a>
       </div>
     </div>
   );

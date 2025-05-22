@@ -3,9 +3,9 @@
 import React from "react";
 import styled from "styled-components";
 import ApyButton from "./ApyButton";
+import { HelpIcon, Skeleton } from "uikit";
 import { BASE_ADD_LIQUIDITY_URL } from "config";
 import getLiquidityUrlPathParts from "utils/getLiquidityUrlPathParts";
-import { Skeleton } from "uikit";
 
 const Container = styled.div`
   display: flex;
@@ -49,6 +49,11 @@ const Apr = ({
               addLiquidityUrl={addLiquidityUrl}
             />
           )}
+          <HelpIcon
+                  data-tooltip-id="liquidity-tooltip"
+                  data-tooltip-content="The Multiplier represents the 
+                  proportion of pWiLD rewards each farm receives"
+                />
         </>
       ) : (
         <div className="min-w-[60px] text-left text-symbol">0%</div>

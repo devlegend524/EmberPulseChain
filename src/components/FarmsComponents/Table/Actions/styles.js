@@ -32,7 +32,7 @@ export const ActionContent = styled.div`
   align-items: center;
 `
 export const Earned = styled.div`
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   color: #59b32a;
 `

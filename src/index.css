@@ -54,7 +54,7 @@ body {
 );
 }
 .banner_btn {
-  @apply py-2 text-white font-semibold rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
+  @apply py-1 text-white rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
   background-image: linear-gradient(
   90deg,
   #a855f7 0%,   /* Orange */
@@ -64,6 +64,9 @@ body {
 }
 .banner_add_btn {
   @apply py-2 text-white font-semibold border border-[#8b5cf6] rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
+}
+.farm_url {
+  @apply py-2 text-white border border-[#8b5cf6] rounded-lg text-xs text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
 }
 
 /* .main_btn::before {
@@ -79,7 +82,7 @@ body {
 }
 
 .action_panel_container {
-  @apply flex flex-col md:flex-row justify-between p-2 lg:p-3 w-full last:rounded-lg bg-primary;
+  @apply flex grid grid-cols-2 justify-center items-start gap-4 md:flex-row py-2 lg:py-3 w-full ;
 }
 
 .action_panel {

@@ -95,7 +95,7 @@ export default function FarmBanner() {
           <div className="flex-y justify-center">
             <div className="flex items-center justify-start px-3 gap-3">
               <a
-                className="banner_btn flex justify-center items-center gap-2 px-4"
+                className="banner_btn py-2 flex justify-center items-center gap-2 px-4"
                 href={`${BASE_SWAP_URL}?inputCurrency=${getWethAddress()}&outputCurrency=${getpWiLDAddress()}`}
                 target="_blank"
               >

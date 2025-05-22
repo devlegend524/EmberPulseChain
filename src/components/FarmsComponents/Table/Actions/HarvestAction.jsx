@@ -51,7 +51,7 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
     try {
       setPendingTx(true);
       const res = await onReward(false);
-      console.log('harvest', res)
+      console.log("harvest", res);
       if (res === false) {
         setPendingTx(false);
         return;
@@ -100,67 +100,70 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
   }
 
   return (
-    <div className="flex flex-row items-center  justify-between md:justify-around gap-4  p-2 lg:p-4 w-full">
+    <div className="flex flex-row items-center justify-between gap-4 p-2 w-full">
       <div className="flex flex-col justify-between gap-2 w-full">
         <div className="text-white text-md font-semibold">
-          pWiLD &nbsp;
+          EMBER &nbsp;
           {t("Earned")}
         </div>
-        <Earned>{displayBalance}</Earned>
-        {earningsUsdt > 0 && (
-          <Balance
-            fontSize="14px"
-            color="white"
-            decimals={2}
-            value={earningsUsdt}
-            unit=" USD"
-            prefix="~"
-          />
-        )}
-      </div>
-      <div className="flex flex-col justify-center gap-2 lg:min-w-[180px] min-w-[130px]">
-        <button
-          disabled={earnings.eq(0) || pendingTx || !userDataReady}
-          onClick={handleHavest}
-          className="rounded-md p-1  text-center text-white font-medium banner_btn "
-        >
-          {t(`Harvest`)}
-        </button>
-
-        <div className="flex flex-col lg:flex-row gap-2 w-full">
-          {!isNFTPool && (
-            <>
-              <button
-                className="rounded-md w-full lg:w-1/2 px-2 py-1  text-center text-white font-medium banner_btn hover:bg-symbolHover"
-                data-tooltip-id="compound-tooltip"
-                data-tooltip-content={
-                  earnings.eq(0) || pendingCompoundTx || !userDataReady
-                    ? "Stake tokens first to use it"
-                    : "Restake your pWiLD profit to pWiLD pool"
-                }
-                disabled={earnings.eq(0) || pendingCompoundTx || !userDataReady}
-                onClick={openCompoundModal}
-              >
-
-                {t(`Compound`)
-                }
-              </button>
-              <button
-                className="rounded-md w-full lg:w-1/2 px-2 py-1 text-white text-center font-medium banner_btn hover:bg-symbolHover"
-                data-tooltip-id="zap-tooltip"
-                data-tooltip-content="Stake to this pool from your wallet"
-                disabled={!userDataReady}
-                onClick={openModal}
-              >
-                {t("Zap in")}
-              </button>
-            </>
+        <div className="flex justify-start items-center">
+          <div className="mr-20">
+            <Earned>{displayBalance}</Earned>
+          {earningsUsdt > 0.00 && (
+            <Balance
+              fontSize="14px"
+              color="white"
+              decimals={2}
+              value={earningsUsdt}
+              unit=" USD"
+              prefix="~"
+            />
           )}
+          </div>
+          <div className="flex justify-center gap-3">
+            <button
+              disabled={earnings.eq(0) || pendingTx || !userDataReady}
+              onClick={handleHavest}
+              className="rounded-3xl px-3 text-center text-white banner_btn "
+            >
+              {t(`Harvest`)}
+            </button>
 
-          <Tooltip id="compound-tooltip" />
-          <Tooltip id="zap-tooltip" />
+            {!isNFTPool && (
+              <>
+                <button
+                  className="rounded-3xl w-full px-3 text-center text-white banner_btn hover:bg-symbolHover"
+                  data-tooltip-id="compound-tooltip"
+                  data-tooltip-content={
+                    earnings.eq(0) || pendingCompoundTx || !userDataReady
+                      ? "Stake tokens first to use it"
+                      : "Restake your EMBER profit to EMBER pool"
+                  }
+                  disabled={
+                    earnings.eq(0) || pendingCompoundTx || !userDataReady
+                  }
+                  onClick={openCompoundModal}
+                >
+                  {t(`Compound`)}
+                </button>
+                <button
+                  className="rounded-3xl w-full px-3 text-white text-center banner_btn hover:bg-symbolHover"
+                  data-tooltip-id="zap-tooltip"
+                  data-tooltip-content="Stake to this pool from your wallet"
+                  disabled={!userDataReady}
+                  onClick={openModal}
+                >
+                  {t("Zap in")}
+                </button>
+              </>
+            )}
+
+            <Tooltip id="compound-tooltip" />
+            <Tooltip id="zap-tooltip" />
+          </div>
         </div>
       </div>
+
       {open && <ZapInModal open={open} closeModal={closeModal} pid={pid} />}
       {openCompound && (
         <CompoundModal
@@ -173,8 +176,7 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
       )}
 
       {pendingTx && <LogoLoading title="Harvesting..." />}
-      {pendingCompoundTx &&
-        <Loading title="Compounding..." />}
+      {pendingCompoundTx && <Loading title="Compounding..." />}
     </div>
   );
 };

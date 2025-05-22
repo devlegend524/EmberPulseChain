@@ -96,12 +96,12 @@ export default function FarmStaking() {
       </div>
       <div className="flex justify-between flex-col md:flex-row">
         <div>
-          <div className="text-base pb-2 font-semibold">pWiLD to Harvest:</div>
+          <div className="text-base pb-2 font-semibold">EMBER to Harvest:</div>
           <div className="text-sm text-gray-300">
             <WiLDHarvestBalance farmsWithBalance={balancesWithValue} />
           </div>
           <div className="text-base pb-2 font-semibold mt-5">
-            pWiLD in Wallet:
+            EMBER in Wallet:
           </div>
           <div className="text-sm text-gray-300">
             <WiLDWalletBalance />
@@ -118,7 +118,7 @@ export default function FarmStaking() {
             </div>
 
             <span className="text-[11px] text-right">
-              ( Sales tax burns all of the pWiLD automatically. <br /> The sales
+              ( Sales tax burns all of the EMBER automatically. <br /> The sales
               tax will drop over the next week to 8% )
             </span>
           </div>

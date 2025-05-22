@@ -18,21 +18,6 @@ import Apr from "../Apr";
 import Multiplier from "../Multiplier";
 import Liquidity from "../Liquidity";
 
-const StyledLinkExternal = styled(LinkExternal)`
-  font-weight: 400;
-  color: white;
-`;
-
-const StakeContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-
-  @media screen and (min-width: 576px) {
-    justify-content: flex-start;
-  }
-`;
-
 const TagsContainer = styled.div`
   display: flex;
   align-items: center;
@@ -104,44 +89,31 @@ const ActionPanel = ({
   }, [details]);
   return (
     <div className="action_panel_container ">
-      <div className="action_panel_content">
-        <div className="flex-y items-center">
-          {isActive && (
-            <StakeContainer>
-              <StyledLinkExternal href={link}>
-                {t("Get %symbol%", { symbol: lpLabel })}
-              </StyledLinkExternal>
-            </StakeContainer>
-          )}
-          <StyledLinkExternal href={scan}>
-            {t("View Contract")}
-          </StyledLinkExternal>
-        </div>
-        <TagsContainer>
-          {noFees && <NoFeesTag />}
-          {farm.withDepositLockDiscount && <DepositLockDicountTag />}
-          {tokenOnly && <SingleStakeTag />}
-          {nftOnly && <NFTStakeTag />}
-        </TagsContainer>
-      </div>
-      <div className="flex flex-col justify-between md:hidden w-full">
-        <ValueWrapper>
-          <Text color="textWhite">{t("APR")}</Text>
-          <Apr {...apr} />
-        </ValueWrapper>
-        <ValueWrapper>
-          <Text color="textWhite">{t("Multiplier")}</Text>
-          <Multiplier {...multiplier} />
-        </ValueWrapper>
-        <ValueWrapper>
-          <Text color="textWhite">{t("Liquidity")}</Text>
-          <Liquidity {...liquidity} />
-        </ValueWrapper>
-      </div>
-      <div className="flex flex-col md:flex-row w-full lg:w-3/4">
+      <div className="flex-y">
         <HarvestAction {...farm} userDataReady={userDataReady} />
-        <StakedAction {...farm} userDataReady={userDataReady} />
+        <div className="flex flex-col justify-between w-full px-4 py-2 bg-[#050506] border border-[#292524] rounded-xl">
+          <ValueWrapper>
+            <Text color="textWhite">{t("APR")}</Text>
+            <Apr {...apr} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text color="textWhite">{t("Multiplier")}</Text>
+            <Multiplier {...multiplier} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text color="textWhite">{t("Liquidity")}</Text>
+            <Liquidity {...liquidity} />
+          </ValueWrapper>
+        </div>
       </div>
+      <StakedAction
+        {...farm}
+        isActive={isActive}
+        link={link}
+        lpLabel={lpLabel}
+        scan={scan}
+        userDataReady={userDataReady}
+      />
     </div>
   );
 };

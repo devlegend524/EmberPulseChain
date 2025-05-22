@@ -40,28 +40,28 @@ const Apr = ({
     <Container>
       {originalValue ? (
         <>
-          <div className="min-w-[60px] text-left text-symbol">{value}%</div>
-          {!hideButton && (
+          <div className="min-w-[60px] text-right text-symbol lg:mr-4 mr-2">{value}%</div>
+          {/* {!hideButton && (
             <ApyButton
               lpLabel={lpLabel}
               wildPrice={wildPrice}
               apr={originalValue}
               addLiquidityUrl={addLiquidityUrl}
             />
-          )}
-          <HelpIcon
-                  data-tooltip-id="liquidity-tooltip"
-                  data-tooltip-content="The Multiplier represents the 
-                  proportion of pWiLD rewards each farm receives"
-                />
+          )} */}
         </>
       ) : (
-        <div className="min-w-[60px] text-left text-symbol">0%</div>
+        <div className="min-w-[60px] text-left text-symbol lg:mr-4 mr-2">0%</div>
       )}
+      <HelpIcon
+        data-tooltip-id="liquidity-tooltip"
+        data-tooltip-content="The Multiplier represents the 
+                  proportion of pWiLD rewards each farm receives"
+      />
     </Container>
   ) : (
     <Container>
-      <div className="min-w-[60px] text-left text-symbol">{originalValue}%</div>
+      <div className="min-w-[60px] text-right text-symbol lg:mr-4 mr-2">{originalValue}%</div>
     </Container>
   );
 };

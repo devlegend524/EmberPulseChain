@@ -5,10 +5,9 @@ import { useTranslation } from "context/Localization";
 import { Tooltip } from "react-tooltip";
 
 const LiquidityWrapper = styled.div`
-  min-width: 110px;
   font-weight: 600;
   text-align: right;
-  margin-right: 14px;
+  padding-right:12px;
 
   @media screen and (min-width: 968px) {
     text-align: left;

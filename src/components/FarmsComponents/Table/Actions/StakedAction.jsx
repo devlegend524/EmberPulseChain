@@ -8,6 +8,7 @@ import {
   Text,
 } from "uikit";
 import { useLocation } from "react-router-dom";
+import ZapInModal from "components/ZapInModal";
 import { BigNumber } from "bignumber.js";
 import Balance from "components/Balance";
 import { useFarmUser, useLpTokenPrice } from "state/hooks";
@@ -60,6 +61,8 @@ const StakedAction = ({
   const { t } = useTranslation();
   const { address } = useAccount();
   const signer = useEthersSigner();
+  const [open, setOpen] = useState(false);
+  const [openstake, setOpenstake] = useState(false);
   const [requestedApproval, setRequestedApproval] = useState(false);
   const {
     allowance,
@@ -92,6 +95,23 @@ const StakedAction = ({
     tokenAddress: token.address,
   });
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`;
+
+  function openModal() {
+    console.log(pid);
+    setOpen(true);
+  }
+
+  function closeModal() {
+    setOpen(false);
+  }
+  function openStakeModal() {
+    console.log(pid);
+    setOpenstake(true);
+  }
+
+  function closeStakeModal() {
+    setOpenstake(false);
+  }
 
   const handleStake = async (amount, daysToLock) => {
     try {
@@ -128,22 +148,6 @@ const StakedAction = ({
 
   const _depositFee = depositFee;
 
-  const [onPresentDeposit] = useModal(
-    <DepositModal
-      pid={pid}
-      isNFTPool={isNFTPool}
-      isNFTALL={isNFTALL}
-      setIsNFTALL={setIsNFTALL}
-      account={address}
-      max={tokenBalance}
-      onConfirm={handleStake}
-      tokenName={lpSymbol}
-      addLiquidityUrl={addLiquidityUrl}
-      withDepositLockDiscount={withDepositLockDiscount}
-      depositFee={_depositFee}
-      unlockTime={userData.unlockTime}
-    />
-  );
   const [onPresentWithdraw] = useModal(
     <WithdrawModal
       isNFTPool={isNFTPool}
@@ -254,7 +258,7 @@ const StakedAction = ({
             data-tooltip-content="Stake pool"
             onClick={() => {
               setIsNFTALL(false);
-              onPresentDeposit();
+              openStakeModal();
             }}
             disabled={["history", "archived"].some((item) =>
               location.pathname.includes(item)
@@ -271,16 +275,25 @@ const StakedAction = ({
 
   return (
     <div className="flex flex-row md:flex-col justify-between md:justify-center gap-4 p-2 lg:p-4 w-ful bg-[#050506] border border-[#292524] rounded-xl">
-      <div className="flex justify-center font-semibold text-xl w-full">
+      <div className="flex justify-start font-semibold text-xl w-full">
         {t("Stake").toUpperCase()} {lpSymbol}
       </div>
-      <div className="flex grid grid-cols-2 gap-2 w-full justify-center">
+      <div className="flex grid grid-cols-2 gap-3 w-full justify-center">
         <button
-          onClick={onPresentDeposit}
+          className="rounded-3xl w-full px-3 text-white text-center banner_btn hover:bg-symbolHover"
+          data-tooltip-id="zap-tooltip"
+          data-tooltip-content="Stake to this pool from your wallet"
+          disabled={!userDataReady}
+          onClick={openModal}
+        >
+          {t("Zap in")}
+        </button>
+        <button
+          onClick={openStakeModal}
           disabled={["history", "archived"].some((item) =>
             location.pathname.includes(item)
           )}
-          className="rounded-md p-1 text-center text-white font-medium banner_btn p-2 hover:text-gray-500 w-full"
+          className="rounded-md p-1 text-center text-white font-medium banner_btn p-2 w-full"
         >
           {t("Stake")}
         </button>
@@ -302,6 +315,25 @@ const StakedAction = ({
           View Contract
         </a>
       </div>
+      {open && <ZapInModal open={open} closeModal={closeModal} pid={pid} />}
+      {openstake && (
+        <DepositModal
+          open={openstake}
+          closeModal={closeStakeModal}
+          pid={pid}
+          isNFTPool={isNFTPool}
+          isNFTALL={isNFTALL}
+          setIsNFTALL={setIsNFTALL}
+          account={address}
+          max={tokenBalance}
+          onConfirm={handleStake}
+          tokenName={lpSymbol}
+          addLiquidityUrl={addLiquidityUrl}
+          withDepositLockDiscount={withDepositLockDiscount}
+          depositFee={_depositFee}
+          unlockTime={userData.unlockTime}
+        />
+      )}
     </div>
   );
 };

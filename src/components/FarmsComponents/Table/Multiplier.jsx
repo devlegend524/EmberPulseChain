@@ -16,7 +16,7 @@ const Multiplier = ({ multiplier }) => {
   );
   return (
     <Container>
-      <div className="text-symbol w-[36px] lg:text-right lg:mr-4 text-left mr-0">{displayMultiplier}</div>
+      <div className="text-symbol w-[36px] lg:text-right lg:mr-4 text-left mr-1">{displayMultiplier}</div>
       <HelpIcon
         data-tooltip-id="liquidity-tooltip"
         data-tooltip-content="The Multiplier represents the 

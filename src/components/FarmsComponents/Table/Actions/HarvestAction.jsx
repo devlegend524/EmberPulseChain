@@ -146,15 +146,6 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
                 >
                   {t(`Compound`)}
                 </button>
-                <button
-                  className="rounded-3xl w-full px-3 text-white text-center banner_btn hover:bg-symbolHover"
-                  data-tooltip-id="zap-tooltip"
-                  data-tooltip-content="Stake to this pool from your wallet"
-                  disabled={!userDataReady}
-                  onClick={openModal}
-                >
-                  {t("Zap in")}
-                </button>
               </>
             )}
 
@@ -164,7 +155,6 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
         </div>
       </div>
 
-      {open && <ZapInModal open={open} closeModal={closeModal} pid={pid} />}
       {openCompound && (
         <CompoundModal
           open={openCompound}

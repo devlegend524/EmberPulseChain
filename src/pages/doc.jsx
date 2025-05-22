@@ -48,7 +48,7 @@ function Docs() {
           <p>EMBER implements multiple burning mechanisms: 3% sales tax on most transactions, deposit fees from farms, and regular buyback and burn events from treasury funds.</p>
         </ExpandableCard>
       </div>
-      <div className="absolute -top-[35%] left-[15%]  w-full md:w-1/5 h-full opacity-10 z-20 duration-300">
+      <div className="absolute -top-[35%] left-[15%]  w-full md:w-1/5 h-full opacity-15 -z-20 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 

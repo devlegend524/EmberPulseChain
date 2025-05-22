@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FaExternalLinkAlt, FaRegCopy } from "react-icons/fa";
+import { FaExternalLinkAlt, FaRegCopy, FaArrowRight, FaPlus } from "react-icons/fa";
+
 import { getpWiLDAddress, getWethAddress } from "utils/addressHelpers";
 import { CHAIN_ID, TESTNET_CHAIN_ID, BASE_SWAP_URL, BASE_URL } from "config";
 import { useNetwork } from "wagmi";
@@ -94,17 +95,19 @@ export default function FarmBanner() {
           <div className="flex-y justify-center">
             <div className="flex items-center justify-start px-3 gap-3">
               <a
-                className="main_btn px-4"
+                className="banner_btn flex justify-center items-center gap-2 px-4"
                 href={`${BASE_SWAP_URL}?inputCurrency=${getWethAddress()}&outputCurrency=${getpWiLDAddress()}`}
                 target="_blank"
               >
                 Buy EMBER
+                <FaArrowRight className="text-sm"/>
               </a>
               <button
                 onClick={addWatchpWiLDToken}
-                className="main_btn flex items-center justify-center px-4"
+                className=" banner_add_btn flex justify-center items-center gap-2 px-4"
               >
                 Add EMBER to wallet
+                <FaPlus className="text-sm"/>
               </button>
             </div>
             <div className="flex justify-start">

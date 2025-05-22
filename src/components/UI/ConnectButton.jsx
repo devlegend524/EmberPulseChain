@@ -50,7 +50,7 @@ export const WalletConnect = () => {
                   <button
                     onClick={openChainModal}
                     type="button"
-                    className="m-2 sm:m-0 hover:bg-red-500 bg-red-600  transition ease-in-out text-[white!important] flex justify-center items-center gap-1 py-2 px-4 rounded-full"
+                    className="m-2 sm:m-0 hover:bg-red-500 bg-red-600 transition ease-in-out text-[white!important] flex justify-center items-center gap-1 py-2 px-4 rounded-full"
                   >
                     Wrong network
                     <FaAngleDown className="text-xl" />

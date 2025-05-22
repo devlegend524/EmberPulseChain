@@ -345,7 +345,7 @@ export default function Liquidity() {
 
   return (
     <div className="flex justify-center items-center flex-col  min-h-[calc(100vh-200px)] w-full px-5">
-      <div className="fixed -top-[25%] left-[25%] -z-20 w-full md:w-1/5 h-full opacity-10 duration-300">
+      <div className="fixed -top-[20%] left-[23%] -z-20 w-full md:w-1/5 h-full opacity-15 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 
@@ -372,7 +372,7 @@ export default function Liquidity() {
           </g>
         </svg>
       </div>
-      <div className="fixed top-[35%] left-[75%] -z-20 w-full md:w-1/4 h-full opacity-10 duration-300">
+      <div className="fixed top-[35%] left-[75%] -z-20 w-full md:w-1/4 h-full opacity-20 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 
@@ -474,7 +474,7 @@ export default function Liquidity() {
           {Number(tokenAAmount) > 0 &&
           Number(allowanceFrom) <= Number(tokenAAmount) ? (
             <button
-              className="main_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
+              className="banner_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
               onClick={handleApproveFromToken}
               disabled={pendingFromApproveTx}
             >
@@ -488,7 +488,7 @@ export default function Liquidity() {
           {Number(tokenBAmount) > 0 &&
           Number(allowanceTo) <= Number(tokenBAmount) ? (
             <button
-              className="main_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
+              className="banner_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
               onClick={handleApproveToToken}
               disabled={pendingToApproveTx}
             >
@@ -500,7 +500,7 @@ export default function Liquidity() {
             ""
           )}
           <button
-            className="main_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
+            className="banner_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
             onClick={handleAddLiquidity}
             disabled={
               pendingTx ||
@@ -555,7 +555,7 @@ export default function Liquidity() {
           {Number(removeTokenAmount) > 0 &&
           Number(allowanceRemove) <= Number(removeTokenAmount) ? (
             <button
-              className="main_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
+              className="banner_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
               onClick={handleApproveRemoveToken}
               disabled={pendingRemoveApproveTx}
             >
@@ -567,7 +567,7 @@ export default function Liquidity() {
             ""
           )}
           <button
-            className="main_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
+            className="banner_btn mt-5 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] bg-secondary-700"
             onClick={handleRemoveLiquidity}
             disabled={pendingRemoveTx || Number(removeTokenAmount) === 0}
           >

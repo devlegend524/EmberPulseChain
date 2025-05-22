@@ -307,7 +307,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-        <div className="absolute -top-[35%] left-[55%]  w-full md:w-1/3 h-full opacity-10 -z-20 duration-300">
+        <div className="absolute -top-[35%] left-[55%]  w-full md:w-1/3 h-full opacity-15 -z-20 duration-300">
           <svg 
             viewBox="0 0 400 400" 
             xmlns="http://www.w3.org/2000/svg" 

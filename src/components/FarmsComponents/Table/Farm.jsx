@@ -58,6 +58,7 @@ const TokenWrapper = styled.div`
   width: 30px;
   height: 24px;
   position: relative;
+  z-index: 0;
 
   @media screen and (min-width: 576px) {
     width: 60px;

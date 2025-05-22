@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const ArrowIcon = styled(ChevronDownIcon)`
   transform: 'rotate(180deg)';
-  height: 20px;
+  height: 40px;
 `
 
 const Details = ({ actionPanelToggled }) => {

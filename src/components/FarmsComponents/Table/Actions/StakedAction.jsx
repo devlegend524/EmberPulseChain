@@ -276,7 +276,7 @@ const StakedAction = ({
           disabled={["history", "archived"].some((item) =>
             location.pathname.includes(item)
           )}
-          className="rounded-md p-1  text-center text-white font-medium pulse_bg hover:text-gray-500  max-w-[200px] w-full"
+          className="rounded-md p-1  text-center text-white font-medium banner_btn hover:text-gray-500  max-w-[200px] w-full"
         >
           {t("Stake")}
         </button>

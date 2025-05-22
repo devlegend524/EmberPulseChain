@@ -313,12 +313,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .ReactModal__Content,
 .ReactModal__Content--after-open > div {
-  @apply bg-secondary p-8;
+  @apply bg-secondary  p-8;
 }
 
 .ReactModal__Overlay,
 .ReactModal__Overlay--after-open {
-  background-color: #070000bd !important;
+  background-color: rgba(7, 0, 0, 0.74) !important;
+  backdrop-filter: blur(4px); /* Add blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari support */
   transition: all 0.3s ease-in-out;
 }
 
@@ -331,8 +333,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .Toastify__toast-theme--dark {
-  background: #1f212a !important;
-  border: 1px solid #989696;
+  background: linear-gradient(to right,rgb(70, 36, 102), #2E3349, #612263)!important;
+  border: 1px solid #292524;
   border-radius: 14px;
   color: var(--toastify-text-color-dark);
 }

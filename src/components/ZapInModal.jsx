@@ -30,7 +30,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    background: "#1F212A",
+    background: "#09090b",
     color: "white",
     border: "none",
   },
@@ -219,6 +219,8 @@ export default function ZapInModal({ open, closeModal, pid }) {
   };
   return (
     <>
+    <div className="fixed top-[25%] left-[57%] z-20  rounded-full h-[60px] w-[60px] bg-[#3f128d] blur-2xl"></div>
+    <div className="fixed top-[66%] left-[38%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
       <Modal
         isOpen={open}
         onRequestClose={closeModal}
@@ -237,7 +239,7 @@ export default function ZapInModal({ open, closeModal, pid }) {
           <div className=" rounded-full p-2 flex mb-2">
             <select
               name="tokenA"
-              className="bg-transparent border p-2 focus-visible:outline-none w-full cursor-pointer text-gray-100 rounded-md"
+              className="bg-transparent p-2 focus-visible:outline-none w-full cursor-pointer text-gray-100 border border-gray-500 rounded-md"
               onChange={(e) => handleChangeToken(e.target.value)}
             >
               {tokensList.map((item, key) => {
@@ -278,7 +280,7 @@ export default function ZapInModal({ open, closeModal, pid }) {
               type="text"
               onChange={(e) => onChange(e)}
               placeholder="0.000"
-              className="bg-transparent border p-2 focus-visible:outline-none w-full text-right px-2 rounded-md"
+              className="bg-transparent p-2 focus-visible:outline-none w-full text-right px-2 border border-gray-500 rounded-md"
               value={amount}
             />
           </div>

@@ -168,7 +168,7 @@ export default function Swap() {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)]">
-      <div className="fixed top-[44%] left-[15%] -z-10 w-full md:w-1/4 h-full opacity-10 duration-300">
+      <div className="fixed top-[44%] left-[15%] -z-10 w-full md:w-1/4 h-full opacity-15 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 
@@ -280,7 +280,7 @@ export default function Swap() {
               />
 
               {isCheckingAllowance ? (
-                <button className="main_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
+                <button className="banner_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
                   <Loading title="Loading..." />
                 </button>
               ) : (tokenA.lpSymbol !== "PLS" && Number(tokenAAllowance) === 0) ||
@@ -289,7 +289,7 @@ export default function Swap() {
                 <button
                   onClick={handleApprove}
                   disabled={isApproving}
-                  className="main_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
                 >
                   Approve
                 </button>
@@ -303,7 +303,7 @@ export default function Swap() {
                     pendingTx ||
                     isApproving
                   }
-                  className="main_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
                 >
                   {`Swap ${tokenA.lpSymbol} into ${tokenB.lpSymbol}`}
                 </button>

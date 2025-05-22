@@ -11,7 +11,7 @@ const tokens = {
     symbol: "EMBER",
     address: addresses.wild,
     decimals: 18,
-    logo: "/assets/tokens/wildx.jpg",
+    logo: "/assets/tokens/ember.png",
     projectLink: "https://wildbase.farm/", // todo:
   },
   wpls: {

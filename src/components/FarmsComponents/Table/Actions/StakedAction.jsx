@@ -188,14 +188,12 @@ const StakedAction = ({
 
   if (!address) {
     return (
-      <ActionContainer>
-        <ActionTitles>
-          <Text color="white" fontSize="20px">
-            {t("Start Farming")}
-          </Text>
-        </ActionTitles>
-        <ActionContent>Unlock</ActionContent>
-      </ActionContainer>
+      <div className="flex-row md:flex-col justify-between md:justify-center gap-4 p-2 lg:p-4 w-ful bg-[#050506] border border-[#18181b] rounded-xl">
+            <Text color="white" fontSize="20px">
+              {t("Start Farming")}
+            </Text>
+          <ActionContent>Connect wallet to start farming</ActionContent>
+      </div>
     );
   }
 
@@ -274,13 +272,13 @@ const StakedAction = ({
   }
 
   return (
-    <div className="flex flex-row md:flex-col justify-between md:justify-center gap-4 p-2 lg:p-4 w-ful bg-[#050506] border border-[#292524] rounded-xl">
-      <div className="flex justify-start font-semibold text-xl w-full">
-        {t("Stake").toUpperCase()} {lpSymbol}
+    <div className="flex-row md:flex-col justify-between md:justify-center gap-4 p-2 lg:p-4 w-ful bg-[#050506] border border-[#18181b] rounded-xl">
+      <div className="flex justify-start font-semibold text-xl w-full mb-4">
+        Start Farming
       </div>
       <div className="flex grid grid-cols-2 gap-3 w-full justify-center">
         <button
-          className="rounded-3xl w-full px-3 text-white text-center banner_btn hover:bg-symbolHover"
+          className="rounded-3xl w-full px-3 text-white text-center zapin_btn hover:bg-symbolHover"
           data-tooltip-id="zap-tooltip"
           data-tooltip-content="Stake to this pool from your wallet"
           disabled={!userDataReady}

@@ -39,7 +39,6 @@ const TokensWrapper = styled.div`
   gap: 5px;
   align-items: center;
   color: #fff;
-  margin-right: 10px;
 
   flex-direction: column;
 
@@ -95,40 +94,42 @@ const Farm = ({
 
   return (
     <Container>
-      <TokensWrapper>
-        <TokenWrapper>
-          {isTokenOnly ? (
+      <div className="hidden md:block md:mr-2">
+        <TokensWrapper>
+          <TokenWrapper>
+            {isTokenOnly ? (
+              <StyledPrimaryImage
+                variant="inverted"
+                src={token.logo}
+                width={imgSize}
+                height={imgSize}
+              />
+            ) : (
+              <TokenPairImage
+                variant="inverted"
+                primaryToken={token}
+                secondaryToken={quoteToken}
+                width={imgSize}
+                height={imgSize}
+              />
+            )}
+          </TokenWrapper>
+          <Arrow />
+          <TokenWrapper>
             <StyledPrimaryImage
               variant="inverted"
-              src={token.logo}
+              src="/assets/tokens/wildx.jpg"
               width={imgSize}
               height={imgSize}
             />
-          ) : (
-            <TokenPairImage
-              variant="inverted"
-              primaryToken={token}
-              secondaryToken={quoteToken}
-              width={imgSize}
-              height={imgSize}
-            />
-          )}
-        </TokenWrapper>
-        <Arrow />
-        <TokenWrapper>
-          <StyledPrimaryImage
-            variant="inverted"
-            src="/assets/tokens/wildx.jpg"
-            width={imgSize}
-            height={imgSize}
-          />
-        </TokenWrapper>
-      </TokensWrapper>
+          </TokenWrapper>
+        </TokensWrapper>
+      </div>
       <div>
         {handleRenderFarming()}
         <Text color="secondary">{label}</Text>
         <p className="text-[12px] w-[99px]">
-          Deposit fee:{" "}
+          <span className="text-gray-400">Deposit fee: </span>
           <DepositFee
             depositFee={depositFee}
             isTokenOnly={isTokenOnly}

@@ -22,6 +22,7 @@ const Container = styled.div`
 `;
 
 const Apr = ({
+  active={},
   value,
   lpLabel,
   tokenAddress,
@@ -40,7 +41,9 @@ const Apr = ({
     <Container>
       {originalValue ? (
         <>
-          <div className="min-w-[60px] text-right text-symbol lg:mr-4 mr-2">{value}%</div>
+          <div className={`min-w-[60px] ${active ? "text-green-500": "text-left"}t text-white lg:mr-4 mr-2`}>
+            {value}%
+          </div>
           {/* {!hideButton && (
             <ApyButton
               lpLabel={lpLabel}
@@ -49,19 +52,22 @@ const Apr = ({
               addLiquidityUrl={addLiquidityUrl}
             />
           )} */}
+          <HelpIcon
+            data-tooltip-id="liquidity-tooltip"
+            data-tooltip-content="The Multiplier represents the 
+                  proportion of EMBER rewards each farm receives"
+            className="text-gray-400"
+          />
         </>
       ) : (
-        <div className="min-w-[60px] text-left text-symbol lg:mr-4 mr-2">0%</div>
+        <div className="min-w-[60px] text-left text-white lg:mr-4 mr-2">0%</div>
       )}
-      <HelpIcon
-        data-tooltip-id="liquidity-tooltip"
-        data-tooltip-content="The Multiplier represents the 
-                  proportion of pWiLD rewards each farm receives"
-      />
     </Container>
   ) : (
     <Container>
-      <div className="min-w-[60px] text-right text-symbol lg:mr-4 mr-2">{originalValue}%</div>
+      <div className="min-w-[60px] text-left text-white lg:mr-4 mr-2">
+        {originalValue}%
+      </div>
     </Container>
   );
 };

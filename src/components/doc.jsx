@@ -39,7 +39,7 @@ const ExpandableCard = ({ title, children }) => {
         aria-expanded={isExpanded}
         role="button"
         tabIndex="0"
-        className='mt-4 pb-8 border-b border-[#292524] '
+        className='my-2 pb-8 border-b border-[#18181b] '
       >
         {title}
         <Chevron expanded={isExpanded}>▼</Chevron>
@@ -61,7 +61,6 @@ const CardContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 600px;
 `;
 
 const Title = styled.div`

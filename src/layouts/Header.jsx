@@ -47,7 +47,7 @@ export default function Header() {
                   />
                 </svg>
                 <div className="flex gap-2 items-center">
-                  <h1 className="flex text-xl mx-3 font-bold bg-gradient-to-r from-[#e879f9] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent">
+                  <h1 className="flex text-xl mx-3 font-bold bg-gradient-to-r from-[#946cc5] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent">
                   EMBER <span className="flex mx-1 text-sm font-normal text-white/70 flex items-end">Finance</span>
                 </h1>
                 </div>

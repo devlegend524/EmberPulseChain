@@ -27,14 +27,12 @@ const cells = {
 };
 
 const Content = styled.div`
-  padding: 0 20px;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
   background-color: transparent;
   
   ${props => props.expanded && css`
-    padding: 20px;
     max-height: 2000px;
   `}
 `;
@@ -109,8 +107,8 @@ const Row = (props) => {
   const handleRenderRow = () => {
     if (!isXs) {
       return (
-        <div ref={cardRef} className="m-4 px-4 border border-[#292524] rounded-xl shadow-xl">
-          <div className='flex justify-around border-b border-[#292524]' onClick={toggleActionPanel} aria-expanded={actionPanelExpanded} role="button" tabIndex="0">
+        <div ref={cardRef} className="m-3 px-6 border border-[#18181b] rounded-xl shadow-xl">
+          <div className='flex justify-around border-b border-[#27272a]' onClick={toggleActionPanel} >
             {Object.keys(props).map((key) => {
               const columnIndex = columnNames.indexOf(key);
               if (columnIndex === -1) {

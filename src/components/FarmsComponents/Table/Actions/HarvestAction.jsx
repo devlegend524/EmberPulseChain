@@ -100,9 +100,9 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
   }
 
   return (
-    <div className="flex flex-row items-center justify-between gap-4 p-2 w-full">
+    <div className="flex flex-row items-center justify-between gap-4 pb-4 w-full">
       <div className="flex flex-col justify-between gap-2 w-full">
-        <div className="text-white text-md font-semibold">
+        <div className="text-gray-400 text-sm">
           EMBER &nbsp;
           {t("Earned")}
         </div>
@@ -124,7 +124,7 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
             <button
               disabled={earnings.eq(0) || pendingTx || !userDataReady}
               onClick={handleHavest}
-              className="rounded-3xl px-3 text-center text-white banner_btn "
+              className="rounded-3xl px-3 text-center text-gray-400 harvest_btn "
             >
               {t(`Harvest`)}
             </button>
@@ -132,7 +132,7 @@ const HarvestAction = ({ pid, userData, userDataReady, isNFTPool }) => {
             {!isNFTPool && (
               <>
                 <button
-                  className="rounded-3xl w-full px-3 text-center text-white banner_btn hover:bg-symbolHover"
+                  className="rounded-3xl w-full px-3 text-center text-gray-400 harvest_btn hover:bg-symbolHover"
                   data-tooltip-id="compound-tooltip"
                   data-tooltip-content={
                     earnings.eq(0) || pendingCompoundTx || !userDataReady

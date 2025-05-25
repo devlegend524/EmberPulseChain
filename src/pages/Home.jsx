@@ -335,7 +335,7 @@ export default function Home() {
           </svg>
         </div>
       </motion.div>
-      <div className="flex justify-between items-center mb-20">
+      <div className="flex flex-row justify-between items-center mb-20">
         <FarmBanner />
         <TotalValueLocked />
       </div>

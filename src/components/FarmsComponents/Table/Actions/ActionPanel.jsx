@@ -4,56 +4,20 @@ import { useTranslation } from "context/Localization";
 import { LinkExternal, Text } from "uikit";
 import getLiquidityUrlPathParts from "utils/getLiquidityUrlPathParts";
 import { getScanAddressUrl } from "utils/getExplorerURL";
-import {
-  DepositLockDicountTag,
-  NoFeesTag,
-  SingleStakeTag,
-  NFTStakeTag,
-} from "components/Tags";
+
 import { BASE_ADD_LIQUIDITY_URL, BASE_SWAP_URL } from "config";
 
 import HarvestAction from "./HarvestAction";
 import StakedAction from "./StakedAction";
 import Apr from "../Apr";
-import Multiplier from "../Multiplier";
+import Earned from "../Earned";
+import DepositFee from "../DepositFee";
 import Liquidity from "../Liquidity";
-
-const TagsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 25px;
-
-  @media screen and (min-width: 576px) {
-    margin-top: 16px;
-  }
-  @media screen and (max-width: 576px) {
-    flex-direction: column;
-    margin-top: 0;
-    gap: 0.5rem;
-  }
-  > div {
-    height: 24px;
-    padding: 2px 6px;
-    font-size: 14px;
-    margin-right: 4px;
-    border-radius: 5px;
-
-    svg {
-      width: 14px;
-    }
-  }
-`;
-const ValueWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 4px 0px;
-`;
 
 const ActionPanel = ({
   details,
   apr,
-  multiplier,
+  earned,
   liquidity,
   userDataReady,
 }) => {
@@ -88,22 +52,26 @@ const ActionPanel = ({
     setFarm(details);
   }, [details]);
   return (
-    <div className="action_panel_container ">
-      <div className="flex-y">
+    <div className="md:flex-row grid md:grid-cols-1 lg:grid-cols-2 justify-center items-start gap-4 py-2 lg:py-3 w-full">
+      <div className="">
         <HarvestAction {...farm} userDataReady={userDataReady} />
-        <div className="flex flex-col justify-between w-full px-4 py-2 bg-[#050506] border border-[#292524] rounded-xl">
-          <ValueWrapper>
-            <Text color="textWhite">{t("APR")}</Text>
-            <Apr {...apr} />
-          </ValueWrapper>
-          <ValueWrapper>
-            <Text color="textWhite">{t("Multiplier")}</Text>
-            <Multiplier {...multiplier} />
-          </ValueWrapper>
-          <ValueWrapper>
-            <Text color="textWhite">{t("Liquidity")}</Text>
+        <div className="flex flex-col justify-between space-y-2 w-full px-4 py-4 bg-[#070708] border border-[#18181b] rounded-xl">
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">{t("APR")}</span>
+            <Apr {...apr} active={true}/>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">{t("Earn")}</span>
+            <span className="text-white text-md">{earned.earnings}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">{t("Deposit Fee")}</span>
+            <span className="text-white text-md">{farm.depositFee}%</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">{t("Liquidity")}</span>
             <Liquidity {...liquidity} />
-          </ValueWrapper>
+          </div>
         </div>
       </div>
       <StakedAction

@@ -27,12 +27,14 @@ export const ActionTitles = styled.div`
 `
 
 export const ActionContent = styled.div`
+margin:20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-center;
 `
 export const Earned = styled.div`
   font-weight: 500;
   font-size: 16px;
-  color: #59b32a;
+  color: white;
 `

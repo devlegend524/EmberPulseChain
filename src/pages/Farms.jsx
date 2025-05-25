@@ -297,7 +297,7 @@ export default function Farms() {
   };
 
   return (
-    <div className="flex justify-center w-full md:max-w-7xl mt-12">
+    <div className="flex justify-center  w-full px-48 mt-12">
       <div className="fixed -top-[5%] left-[60%] -z-20 w-full md:w-1/3 h-full opacity-15 duration-300">
         <svg 
           viewBox="0 0 400 400" 

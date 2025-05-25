@@ -3,7 +3,7 @@ import { socials } from "config";
 import moment from "moment";
 export default function Footer() {
   return (
-    <footer className="flex justify-around items-center absolute bottom-0 w-full mb-2 border-t border-[#292524] shadow-md">
+    <footer className="flex justify-around items-center absolute bottom-0 w-full mb-2 border-t border-[#18181b] shadow-md">
       <div className="text-md">
         @{moment().format("YYYY")} EMBER Finance{" "}
         <span className="font-semibold mx-2">( v1.0 )</span> All Rights

@@ -40,10 +40,10 @@ const Liquidity = ({ liquidity }) => {
       <LiquidityWrapper>
         <Text color="secondary">{displayLiquidity}</Text>
       </LiquidityWrapper>
-      <HelpIcon
+      {/* <HelpIcon
         data-tooltip-id="liquidity-tooltip"
         data-tooltip-content="Total value of the funds in this farm’s liquidity pool"
-      />
+      /> */}
       <Tooltip id="liquidity-tooltip" />
       {/* {tooltipVisible && tooltip} */}
     </Container>

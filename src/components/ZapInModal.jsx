@@ -86,7 +86,7 @@ const tokensList = [
 export default function ZapInModal({ open, closeModal, pid }) {
   const { t } = useTranslation();
   const [targetToken, setTargetToken] = useState(
-    pid ? getFarmFromPid(pid) : getFarmFromPid(1)
+    pid ? getFarmFromPid(pid) : getFarmFromPid(0)
   );
   const [inputToken, setInputToken] = useState(tokensList[0]);
   const [pendingZapTx, setZapPendingTx] = useState(false);

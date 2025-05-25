@@ -195,7 +195,7 @@ export default function Swap() {
           </g>
         </svg>
       </div>
-      <div className="p-6 border border-[#292524] rounded-xl shadow-xl">
+      <div className="p-6 border border-[#18181b] rounded-xl shadow-xl">
         <div className="tab">
           <div className="flex justify-center">
             <div className="tab_panel">
@@ -219,8 +219,8 @@ export default function Swap() {
           <Zapper />
         ):(
           <div>
-            <div className="p-6 border border-[#292524] rounded-xl">
-              <div className="border-b border-[#292524] mb-4">
+            <div className="p-6 border border-[#18181b] rounded-xl">
+              <div className="border-b border-[#18181b] mb-4">
                 <div className="flex justify-between items-center">
                   <div className="flex-1"></div>
                   <div className="flex-1 flex justify-center items-center">

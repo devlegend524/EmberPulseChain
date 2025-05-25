@@ -111,7 +111,7 @@ export const zapList = [
     lpAddresses: addresses.wildWplslp,
     decimals: 18,
     logoA: tokens.wild.logo,
-    logoB: tokens.wpls.logo,
+    logoB: tokens.dai.logo,
   },
 ];
 
@@ -146,7 +146,7 @@ const farmsConfig = [
     isNFTPool: false,
     token: tokens.wpls,
     quoteToken: tokens.wpls,
-    logoA: tokens.wpls.logo,
+    logoA: tokens.wild.logo,
     logoB: tokens.wpls.logo,
   },
   {
@@ -157,7 +157,7 @@ const farmsConfig = [
     isNFTPool: false,
     token: tokens.dai,
     quoteToken: tokens.dai,
-    logoA: tokens.dai.logo,
+    logoA: tokens.wild.logo,
     logoB: tokens.dai.logo,
   },
   // {

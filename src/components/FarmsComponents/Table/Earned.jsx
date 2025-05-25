@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Skeleton } from 'uikit'
 
 const Amount = styled.span`
-  color: #59b32a;
+  color: white;
   display: flex;
   align-items: center;
 `

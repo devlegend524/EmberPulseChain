@@ -58,7 +58,7 @@ const ActionPanel = ({
         <div className="flex flex-col justify-between space-y-2 w-full px-4 py-4 bg-[#070708] border border-[#18181b] rounded-xl">
           <div className="flex justify-between items-center">
             <span className="text-gray-400">{t("APR")}</span>
-            <Apr {...apr} active={true}/>
+            <Apr {...apr}/>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-gray-400">{t("Earn")}</span>

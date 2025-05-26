@@ -22,7 +22,6 @@ const Container = styled.div`
 `;
 
 const Apr = ({
-  active={},
   value,
   lpLabel,
   tokenAddress,
@@ -41,7 +40,7 @@ const Apr = ({
     <Container>
       {originalValue ? (
         <>
-          <div className={`min-w-[60px] ${active ? "text-green-500": "text-left"}t text-white lg:mr-4 mr-2`}>
+          <div className={`text-left text-white`}>
             {value}%
           </div>
           {/* {!hideButton && (
@@ -60,12 +59,12 @@ const Apr = ({
           />
         </>
       ) : (
-        <div className="min-w-[60px] text-left text-white lg:mr-4 mr-2">0%</div>
+        <div className="text-left text-white">0%</div>
       )}
     </Container>
   ) : (
     <Container>
-      <div className="min-w-[60px] text-left text-white lg:mr-4 mr-2">
+      <div className="text-left text-white">
         {originalValue}%
       </div>
     </Container>

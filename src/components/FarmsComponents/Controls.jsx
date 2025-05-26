@@ -15,9 +15,9 @@ export default function FarmControls({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
     >
-        <div className="grid grid-cols-1 md:grid-cols-2 px-2 py-4 mt-5 rounded-xl">
+        <div className="md:flex-row lg:flex items-center justify-start lg:justify-between px-2 py-4 mt-5 rounded-xl">
           <div className="text-left">
-            <div className="text-lg md:text-4xl font-bold mb-2">
+            <div className="sm:text-lg md:text-2xl lg:text-3xl font-bold mb-2">
               Farms & Staking
             </div>
             <div>Stake your tokens to earn EMBER rewards</div>

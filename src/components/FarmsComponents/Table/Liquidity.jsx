@@ -7,7 +7,6 @@ import { Tooltip } from "react-tooltip";
 const LiquidityWrapper = styled.div`
   font-weight: 600;
   text-align: right;
-  padding-right:12px;
 
   @media screen and (min-width: 968px) {
     text-align: left;

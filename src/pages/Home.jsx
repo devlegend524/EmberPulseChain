@@ -24,6 +24,7 @@ import { NUMBER_OF_FARMS_VISIBLE } from "config";
 import { useFarms, usePollFarmsData, usePricepWiLDUsdc } from "state/hooks";
 import { useAccount } from "wagmi";
 import Swap from "./Swap";
+import Zapper from "./zapper";
 
 export default function Home() {
   const { pathname } = useLocation();
@@ -349,7 +350,9 @@ export default function Home() {
       />
       {renderContent()}
       <div ref={loadMoreRef} />
-      <Swap />
+      <div className="flex justify-center mt-28">
+      <Zapper />
+      </div>
     </div>
   );
 }

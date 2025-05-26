@@ -153,7 +153,7 @@
 
 .token_prices input {
   @apply bg-transparent;
-  height: 32px;
+  height: 25px;
   font-size: 20px;
   text-align: end;
   color: #ffffff;

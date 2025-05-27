@@ -11,6 +11,7 @@ import { notify } from "utils/toastHelper";
 import { RiExchangeDollarLine } from "react-icons/ri";
 import TokenSelectModal from "components/TokenSelectModal";
 import TokenSelect from "components/TokenSelect";
+import ZapTokenSelect from "components/ZapTokenSelect";
 import Loading from "components/Loading";
 import LogoLoading from "components/LogoLoading";
 import useZap from "hooks/useZap";
@@ -265,7 +266,7 @@ export default function Swap() {
                 </p>
               </div>
               <div className="border border-[#18181b] rounded-2xl p-8 space-y-6">
-                <TokenSelect
+                <ZapTokenSelect
                   type="A"
                   token={tokenA}
                   selectOnly={false}
@@ -287,7 +288,7 @@ export default function Swap() {
                     <RiExchangeDollarLine className="text-3xl" />
                   </button>
                 </div>
-                <TokenSelect
+                <ZapTokenSelect
                   type="B"
                   selectOnly={true}
                   token={tokenB}
@@ -333,7 +334,6 @@ export default function Swap() {
                   )}
                 </div>
               </div>
-                Popular: 
             </div>
             {/* TokenA modal */}
             <TokenSelectModal

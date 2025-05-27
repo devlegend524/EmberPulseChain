@@ -5,7 +5,7 @@ import { getBalance } from "utils/balanceHalper";
 import { toFixed } from "utils/customHelpers";
 import { useDebounce } from "use-debounce";
 
-export default function TokenSelect({
+export default function ZapTokenSelect({
   setOpen,
   token,
   setAmount,

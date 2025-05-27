@@ -282,7 +282,9 @@ export default function Zapper() {
               single transaction.
             </p>
           </div>
-          <div className="border border-[#19191b] rounded-3xl p-8">
+          <div className="glass border border-[#19191b] rounded-3xl p-8 overflow-hidden">
+            <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl"></div>
+    <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
             <div className="flex justify-between gap-10">
               <ZapTokenSelect
                 type="A"

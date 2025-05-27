@@ -20,8 +20,8 @@ export default function index({ children }) {
         <Footer />
       </div>
       </motion.div>
-      <div className="fixed -top-[10%] left-[65%] -z-20  rounded-full h-[500px] w-[500px] bg-[#170537] blur-3xl opacity-70"></div>
-      <div className="fixed -bottom-[85%] -left-[25%] -z-20  rounded-full h-[1200px] w-[1200px] bg-[#1c0803] blur-3xl opacity-70"></div>
+      <div className="fixed -top-[10%] left-[65%] -z-20  rounded-full h-[500px] w-[500px] bg-[#170537] blur-3xl opacity-60"></div>
+      <div className="fixed -bottom-[85%] -left-[25%] -z-20  rounded-full h-[1200px] w-[1200px] bg-[#1c0803] blur-3xl opacity-40"></div>
     </div>
   );
 }

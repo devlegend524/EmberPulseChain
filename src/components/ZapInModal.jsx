@@ -220,7 +220,7 @@ export default function ZapInModal({ open, closeModal, pid }) {
   return (
     <>
       <div className="fixed top-[25%] left-[57%] z-20  rounded-full h-[60px] w-[60px] bg-[#3f128d] blur-2xl"></div>
-      <div className="fixed top-[66%] left-[38%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
+      <div className="fixed top-[75%] md:top-[66%] left-[38%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
       <Modal
         isOpen={open}
         onRequestClose={closeModal}

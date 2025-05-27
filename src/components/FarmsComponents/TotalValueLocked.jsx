@@ -44,7 +44,7 @@ export default function TotalValueLocked() {
     totalSupply - toReadableAmount(tokenABalanceRead?.data, 18);
   return (
     <motion.div
-      className="rounded-3xl w-1/3"
+      className="rounded-3xl px-4"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.2}}

@@ -75,7 +75,7 @@ const DepositModal = ({
   return (
     <>
       <div className="fixed top-[26%] left-[39%] z-20  rounded-full h-[60px] w-[60px] bg-[#3f128d] blur-2xl"></div>
-      <div className="fixed top-[65%] left-[57%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
+      <div className="fixed top-[73%] md:top-[65%] left-[57%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
       <Modal
         isOpen={open}
         onRequestClose={closeModal}

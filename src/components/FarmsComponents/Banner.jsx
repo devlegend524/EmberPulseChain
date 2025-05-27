@@ -65,14 +65,14 @@ export default function FarmBanner() {
       transition={{ duration: 0.6 }}
     >
       <div className="flex-y justify-center">
-        <div className="px-3 py-10 text-center md:text-left">
+        <div className="px-3 md:py-10 text-left">
           <motion.h1
             className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h1 className="bg-gradient-to-r from-[#e879f9] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-5xl mb-10">EARN EMBER</h1>
+            <h1 className="bg-gradient-to-r from-[#e879f9] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-4xl md:text-5xl mb-10">EARN EMBER</h1>
           </motion.h1>
           <motion.span
             className="text-lg text-white/80 mb-6 max-w-lg"
@@ -92,8 +92,8 @@ export default function FarmBanner() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <div className="flex-y justify-center">
-            <div className="flex items-center justify-start px-3 gap-3">
+          <div className="flex-y justify-center items-center">
+            <div className="flex-y md:flex items-center justify-start px-3 gap-3 space-y-5 md:space-y-0 mt-8 md:mt-0">
               <a
                 className="banner_btn flex justify-center items-center gap-2 px-8 border border-[#8b5cf6]"
                 href={`${BASE_SWAP_URL}?inputCurrency=${getWethAddress()}&outputCurrency=${getpWiLDAddress()}`}

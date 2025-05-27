@@ -21,7 +21,7 @@ import { NUMBER_OF_FARMS_VISIBLE } from "config";
 import { useFarms, usePollFarmsData, usePricepWiLDUsdc } from "state/hooks";
 import { useAccount } from "wagmi";
 
-export default function Farms() {
+export default function Farms({home}) {
   const { pathname } = useLocation();
   const { address } = useAccount();
   const isArchived = pathname.includes("archived");
@@ -297,8 +297,8 @@ export default function Farms() {
   };
 
   return (
-    <div className="flex justify-center  w-full px-auto md:px-48 my-auto md:mt-12">
-      <div className="fixed -top-[5%] left-[60%] -z-20 w-full md:w-1/3 h-full opacity-15 duration-300">
+    <div className={`flex justify-center  w-full px-auto ${home? "md:px-48":""} my-auto md:mt-12`}>
+      <div className={`fixed -top-[5%] left-[60%] -z-20 ${home? "block":"hidden"} w-full md:w-1/3 h-full opacity-15 duration-300`}>
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 

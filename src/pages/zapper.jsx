@@ -20,7 +20,7 @@ import { useAppDispatch } from "state";
 import { useZapForFarm } from "hooks/useZap";
 import { fetchFarmUserDataAsync } from "state/farms";
 
-export default function Zapper({home=false}) {
+export default function Zapper({home}) {
   const tokensList = [
     {
       pid: 0,

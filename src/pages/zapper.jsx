@@ -8,7 +8,7 @@ import { getErc20Contract, getLpContract } from "utils/contractHelpers";
 import { didUserReject } from "utils/customHelpers";
 import { ethers } from "ethers";
 import { notify } from "utils/toastHelper";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaArrowDownLong  } from "react-icons/fa6";
 import TokenSelectModal from "components/TokenSelectModal";
 import ZapTokenSelect from "components/ZapTokenSelect";
 import Loading from "components/Loading";
@@ -285,7 +285,7 @@ export default function Zapper({home=false}) {
           <div className="glass border border-[#19191b] rounded-3xl p-8 overflow-hidden">
             <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl"></div>
             <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
-            <div className="flex justify-between gap-10">
+            <div className="flex-y md:flex justify-between gap-4">
               <ZapTokenSelect
                 type="A"
                 token={tokenA}
@@ -300,9 +300,10 @@ export default function Zapper({home=false}) {
                 tokenType=""
                 input={true}
               />
-              <div className="flex justify-center border border-[#19191b] rounded-full my-20 px-3 py-2 glass">
+              <div className="flex justify-center border border-[#19191b] rounded-full my-4 mx-20 md:mx-4 md:my-20 px-3 py-3 glass">
                 <button className="scale-100 hover:scale-110 transition ease-in-out">
-                  <FaArrowRightLong className="text-2xl" />
+                  <FaArrowRightLong className="text-xl hidden md:block" />
+                  <FaArrowDownLong  className="text-xl block md:hidden" />
                 </button>
               </div>
               <ZapTokenSelect
@@ -320,7 +321,7 @@ export default function Zapper({home=false}) {
                 input={false}
               />
             </div>
-            <div className="px-20 mb-2">
+            <div className="md:px-20 mb-2">
               {isCheckingAllowance ? (
                 <button className="banner_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
                   <Loading title="Loading..." />

@@ -297,8 +297,8 @@ export default function Farms() {
   };
 
   return (
-    <div className="flex justify-center  w-full px-48 mt-12">
-      <div className="hidden md:fixed -top-[5%] left-[60%] -z-20 w-full md:w-1/3 h-full opacity-15 duration-300">
+    <div className="flex justify-center  w-full px-auto md:px-48 my-auto md:mt-12">
+      <div className="fixed -top-[5%] left-[60%] -z-20 w-full md:w-1/3 h-full opacity-15 duration-300">
         <svg 
           viewBox="0 0 400 400" 
           xmlns="http://www.w3.org/2000/svg" 
@@ -331,7 +331,14 @@ export default function Farms() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-       
+        <FarmControls
+          options={getSortOptions()}
+          onChange={handleSortOptionChange}
+          checked={stakedOnly}
+          onToggleChange={() => setStakedOnly(!stakedOnly)}
+          query={query}
+          onSearchChange={handleChangeQuery}
+        />
         </motion.div>
         {renderContent()}
         <div ref={loadMoreRef} />

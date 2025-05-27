@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <>
       <div className="glass sticky top-0 z-50 border-b-3 border-[#4c1d95] shadow-md">
-        <div className="container mx-auto px-4 py-3 items-center relative">
+        <div className="container mx-auto px-4 py-1 md:py-3 items-center relative">
           <div className="flex justify-between">
             <div className="hidden sm:block flex items-center">
               <a href="/" className="flex items-center">

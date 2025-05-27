@@ -129,25 +129,23 @@ export default function ZapTokenSelect({
             </span>
             <img className="rounded-full" src="/assets/arrow-down.png" alt="" />
           </div>
-          <div className="flex-y justify-end">
+          <div className="flex-y justify-end space-y-1">
             {loading ? (
               <div className="bg-secondary rounded h-[12px] w-[60px] animate-pulse"></div>
             ) : (
               <div
               onClick={handleMaxAmount}
-              className="text-sm text-gray-400 text-end cursor-pointer"
+              className="text-xs md:text-sm text-gray-400 text-end cursor-pointer"
               >
                 {`Balance: ${balance ? toFixed(balance, 5) : "0.0"}`}
               </div>
             )}
             {!selectOnly && (
-              <div className="p-1">
               <div
                 onClick={handleMaxAmount}
-                className="bg-[#321d4d] text-symbol cursor-pointer shadow-xl text-sm text-center hover:bg-[#422468] rounded-full duration-300 transition ease-in-out"
+                className="text-xs md: bg-[#321d4d] text-symbol cursor-pointer shadow-xl text-sm text-center hover:bg-[#422468] rounded-full duration-300 transition ease-in-out"
               >
                 MAX
-              </div>
               </div>
             )}
           </div>

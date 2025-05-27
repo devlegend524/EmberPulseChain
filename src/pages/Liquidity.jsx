@@ -399,7 +399,7 @@ export default function Liquidity() {
           </g>
         </svg>
       </div>
-      <div className="tab">
+      <div className="tab pt-10">
         <div className="flex justify-center">
           <div className="tab_panel">
             <div
@@ -426,7 +426,7 @@ export default function Liquidity() {
             </div>
             <div className="flex-1 flex justify-center items-center">
               <div className="block">
-                <h1 className="text-center text-symbol text-2xl">
+                <h1 className="w-40 md:w-full text-center text-symbol text-xl md:text-2xl">
                   Add Liquidity
                 </h1>
               </div>
@@ -438,11 +438,11 @@ export default function Liquidity() {
             </div>
           </div>
 
-          <p className="text-center text-gray-400">
+          <p className="text-sm md:text-md text-center text-gray-400 mb-2">
             Receive LP tokens and earn trading fees
           </p>
           <div className="block w-full">
-            <p className="text-sm text-gray-300">Select Token</p>
+            <p className="hidden md:block text-sm text-gray-300">Select Token</p>
             <TokenSelect
               token={tokenA}
               setOpen={setOpenA}

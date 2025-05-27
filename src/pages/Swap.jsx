@@ -217,7 +217,7 @@ export default function Swap() {
           </g>
         </svg>
       </div>
-      <div className="bg-secondary p-6 border border-[#18181b] rounded-xl shadow-xl">
+      <div className="md:bg-secondary p-6 border border-[#18181b] rounded-xl shadow-xl">
         <div className="tab border-b border-[#27272a] pb-2">
           <div className="flex justify-center">
             <div className="tab_panel">
@@ -268,7 +268,7 @@ export default function Swap() {
               <div className="glass border border-[#19191b] rounded-3xl p-8 overflow-hidden">
                 <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl"></div>
                 <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
-                <div className="flex justify-between gap-10">
+                <div className="flex-y md:flex justify-between gap-10">
                   <ZapTokenSelect
                     type="A"
                     token={tokenA}
@@ -283,7 +283,7 @@ export default function Swap() {
                     tokenType=""
                   />
 
-                  <div className="flex justify-center border border-[#19191b] rounded-full my-20 p-2 glass">
+                  <div className="flex justify-center border border-[#19191b] rounded-full my-4 mx-20 md:mx-4 md:my-20 px-3 py-3 glass">
                     <button
                       onClick={handleReverse}
                       className="scale-100 hover:scale-110 transition ease-in-out"
@@ -305,7 +305,7 @@ export default function Swap() {
                     tokenType=""
                   />
                 </div>
-                <div className="px-20 mb-2">
+                <div className="md:px-20 mb-2">
                   {isCheckingAllowance ? (
                     <button className="banner_btn mt-8 hover:bg-symbolHover flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
                       <Loading title="Loading..." />

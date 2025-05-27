@@ -93,7 +93,7 @@ export default function TokenSelect({
 
   return (
     <>
-      <div className="flex-y bg-primary/60 px-6 py-7 space-y-4 border border-[#18181b] rounded-3xl relative">
+      <div className="glass flex-y bg-primary/60 px-6 py-7 space-y-4 border border-[#18181b] rounded-3xl relative">
       <div className="text-lg">
         {input?"Input ":"Output "}Token
       </div>

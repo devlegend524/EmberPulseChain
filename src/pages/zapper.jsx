@@ -257,13 +257,13 @@ export default function Zapper() {
   return (
     <>
       <div>
-        <div className="bg-secondary p-6 border border-[#18181b] rounded-xl">
-          <div className="border-b border-[#18181b] mb-6">
+        <div className="p-6 rounded-xl relative container">
+          <div className=" border-[#18181b] mb-6">
             <div className="flex justify-between items-center">
               <div className="flex-1"></div>
               <div className="flex-1 flex justify-center items-center">
                 <div className="block">
-                  <h1 className="text-center text-symbol text-2xl font-semibold">
+                  <h1 className="text-center text-symbol text-3xl font-bold">
                     ZAPPER
                   </h1>
                 </div>
@@ -282,71 +282,73 @@ export default function Zapper() {
               single transaction.
             </p>
           </div>
-          <div className="flex justify-between gap-10">
-            <ZapTokenSelect
-              type="A"
-              token={tokenA}
-              selectOnly={false}
-              amount={tokenAAmount}
-              setOpen={setOpenA}
-              setAmount={setTokenAAmount}
-              setStates={handleSetTokenAAvailable}
-              setInsufficient={handleSetInsufficientA}
-              updateBalance={updateBalance}
-              setDirection={() => {}}
-              tokenType=""
-              input={true}
-            />
-            <div className="flex justify-center">
-              <button className="scale-100 hover:scale-110 transition ease-in-out">
-                <RiExchangeDollarLine className="text-3xl" />
-              </button>
+          <div className="border border-[#19191b] rounded-3xl p-8">
+            <div className="flex justify-between gap-10">
+              <ZapTokenSelect
+                type="A"
+                token={tokenA}
+                selectOnly={false}
+                amount={tokenAAmount}
+                setOpen={setOpenA}
+                setAmount={setTokenAAmount}
+                setStates={handleSetTokenAAvailable}
+                setInsufficient={handleSetInsufficientA}
+                updateBalance={updateBalance}
+                setDirection={() => {}}
+                tokenType=""
+                input={true}
+              />
+              <div className="flex justify-center">
+                <button className="scale-100 hover:scale-110 transition ease-in-out">
+                  <RiExchangeDollarLine className="text-3xl" />
+                </button>
+              </div>
+              <ZapTokenSelect
+                type="B"
+                selectOnly={true}
+                token={tokenB}
+                amount={tokenBAmount}
+                setOpen={setOpenB}
+                setAmount={setTokenBAmount}
+                setStates={handleSetTokenBAvailable}
+                setInsufficient={handleSetInsufficientB}
+                updateBalance={updateBalance}
+                setDirection={() => {}}
+                tokenType=""
+                input={false}
+              />
             </div>
-            <ZapTokenSelect
-              type="B"
-              selectOnly={true}
-              token={tokenB}
-              amount={tokenBAmount}
-              setOpen={setOpenB}
-              setAmount={setTokenBAmount}
-              setStates={handleSetTokenBAvailable}
-              setInsufficient={handleSetInsufficientB}
-              updateBalance={updateBalance}
-              setDirection={() => {}}
-              tokenType=""
-              input={false}
-            />
-          </div>
-          <div className="px-20 mb-2">
-            {isCheckingAllowance ? (
-              <button className="banner_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
-                <Loading title="Loading..." />
-              </button>
-            ) : (tokenA.lpSymbol !== "PLS" &&
-                tokenAAllowance !== undefined &&
-                ethers.utils.formatUnits(tokenAAllowance, "ether")) === 0 ? (
-              <button
-                onClick={handleApprove}
-                disabled={isApproving}
-                className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
-              >
-                Approve
-              </button>
-            ) : (
-              <button
-                onClick={handleDeposit}
-                disabled={
-                  (tokenA.lpSymbol !== "PLS" &&
-                    Number(tokenAAllowance) < Number(tokenAAmount)) ||
-                  status.insufficientA ||
-                  pendingTx ||
-                  isApproving
-                }
-                className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
-              >
-                {`Zap ${tokenA.lpSymbol} into ${tokenB.lpSymbol}`}
-              </button>
-            )}
+            <div className="px-20 mb-2">
+              {isCheckingAllowance ? (
+                <button className="banner_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
+                  <Loading title="Loading..." />
+                </button>
+              ) : (tokenA.lpSymbol !== "PLS" &&
+                  tokenAAllowance !== undefined &&
+                  ethers.utils.formatUnits(tokenAAllowance, "ether")) === 0 ? (
+                <button
+                  onClick={handleApprove}
+                  disabled={isApproving}
+                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                >
+                  Approve
+                </button>
+              ) : (
+                <button
+                  onClick={handleDeposit}
+                  disabled={
+                    (tokenA.lpSymbol !== "PLS" &&
+                      Number(tokenAAllowance) < Number(tokenAAmount)) ||
+                    status.insufficientA ||
+                    pendingTx ||
+                    isApproving
+                  }
+                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                >
+                  {`Zap ${tokenA.lpSymbol} into ${tokenB.lpSymbol}`}
+                </button>
+              )}
+            </div>
           </div>
         </div>
         {/* TokenA modal */}

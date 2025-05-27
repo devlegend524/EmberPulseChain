@@ -145,6 +145,26 @@
   }
 }
 
+.container {
+  mask-image: 
+    linear-gradient(
+      to top,
+      transparent,
+      transparent var(--fadeHeight),
+      black var(--fadeHeight),
+      black calc(100% - var(--fadeHeight)),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      transparent,
+      transparent var(--fadeHeight),
+      black var(--fadeHeight),
+      black calc(100% - var(--fadeHeight)),
+      transparent
+    );
+}
+
 .custom_input .token_select {
   display: flex;
   align-items: center;

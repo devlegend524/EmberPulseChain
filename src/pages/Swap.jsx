@@ -195,7 +195,7 @@ export default function Swap() {
           </g>
         </svg>
       </div>
-      <div className="p-6 border border-[#18181b] rounded-xl shadow-xl">
+      <div className="bg-secondary p-6 border border-[#18181b] rounded-xl shadow-xl">
         <div className="tab">
           <div className="flex justify-center">
             <div className="tab_panel">

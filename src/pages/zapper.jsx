@@ -8,7 +8,7 @@ import { getErc20Contract, getLpContract } from "utils/contractHelpers";
 import { didUserReject } from "utils/customHelpers";
 import { ethers } from "ethers";
 import { notify } from "utils/toastHelper";
-import { RiExchangeDollarLine } from "react-icons/ri";
+import { FaArrowRightLong } from "react-icons/fa6";
 import TokenSelectModal from "components/TokenSelectModal";
 import ZapTokenSelect from "components/ZapTokenSelect";
 import Loading from "components/Loading";
@@ -20,7 +20,7 @@ import { useAppDispatch } from "state";
 import { useZapForFarm } from "hooks/useZap";
 import { fetchFarmUserDataAsync } from "state/farms";
 
-export default function Zapper() {
+export default function Zapper({home=false}) {
   const tokensList = [
     {
       pid: 0,
@@ -269,12 +269,12 @@ export default function Zapper() {
                 </div>
               </div>
               <div className="flex-1 flex justify-end items-center">
-                <button
+                {!home ? <></>:<button
                   className="action_btn shadow-md hover:bg-primary  transition ease-in-out"
                   onClick={refreshData}
                 >
                   <img src="/assets/refresh.png" alt="" />
-                </button>
+                </button>}
               </div>
             </div>
             <p className="text-center text-gray-400 py-3">
@@ -284,7 +284,7 @@ export default function Zapper() {
           </div>
           <div className="glass border border-[#19191b] rounded-3xl p-8 overflow-hidden">
             <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl"></div>
-    <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
+            <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
             <div className="flex justify-between gap-10">
               <ZapTokenSelect
                 type="A"
@@ -300,9 +300,9 @@ export default function Zapper() {
                 tokenType=""
                 input={true}
               />
-              <div className="flex justify-center">
+              <div className="flex justify-center border border-[#19191b] rounded-full my-20 px-3 py-2 glass">
                 <button className="scale-100 hover:scale-110 transition ease-in-out">
-                  <RiExchangeDollarLine className="text-3xl" />
+                  <FaArrowRightLong className="text-2xl" />
                 </button>
               </div>
               <ZapTokenSelect

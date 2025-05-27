@@ -330,6 +330,7 @@ const StakedAction = ({
           withDepositLockDiscount={withDepositLockDiscount}
           depositFee={_depositFee}
           unlockTime={userData.unlockTime}
+          tokenInfo={token}
         />
       )}
     </div>

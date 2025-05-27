@@ -35,6 +35,7 @@ const DepositModal = ({
   addLiquidityUrl,
   decimals = 18,
   depositFee,
+  tokenInfo,
 }) => {
   const [val, setVal] = useState("");
   const [valNumber, setValueNumber] = useState(new BigNumber(0));
@@ -47,7 +48,6 @@ const DepositModal = ({
   }, [max]);
 
   const fullBalanceNumber = new BigNumber(fullBalance);
-
   const handleChange = useCallback(
     (e) => {
       if (e.currentTarget.validity.valid) {
@@ -82,7 +82,7 @@ const DepositModal = ({
         style={customStyles}
         ariaHideApp={false}
       >
-        <div className="min-w-[350px] max-w-[500px] w-full p-6 rounded-xl">
+        <div className="min-w-[350px] max-w-[500px] w-full p-10 rounded-xl">
           <ModalInput
             value={val}
             onSelectMax={handleSelectMax}
@@ -93,26 +93,17 @@ const DepositModal = ({
             addLiquidityUrl={addLiquidityUrl}
             inputTitle={t("Stake")}
             decimals={decimals}
+            tokenInfo={tokenInfo}
           />
-          <ModalActions>
-            <Button
-              variant="secondary"
-              onClick={onDismiss}
-              width="100%"
-              disabled={pendingTx}
-              style={{ alignSelf: "center", color: "white" }}
+          <div className="flex gap-3 mt-12">
+            <button
+              className="border border-gray-600 w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px]"
+              onClick={closeModal}
             >
-              {t("Cancel")}
-            </Button>
-            <Button
-              className="banner_btn text-white"
-              width="100%"
-              disabled={
-                pendingTx ||
-                !valNumber.isFinite() ||
-                (!isNFTPool && valNumber.eq(0)) ||
-                (!isNFTPool && valNumber.gt(fullBalanceNumber))
-              }
+              Cancel
+            </button>
+
+            <button
               onClick={async () => {
                 setPendingTx(true);
                 await onConfirm(val, lockPeriod);
@@ -120,11 +111,17 @@ const DepositModal = ({
                 setPendingTx(false);
                 onDismiss();
               }}
-              style={{ alignSelf: "center", color: "white" }}
+              className="banner_btn disabled:opacity-50 disabled:hover:scale-100 w-full rounded-lg hover:scale-105 transition ease-in-out p-[8px] "
+              disabled={
+                pendingTx ||
+                !valNumber.isFinite() ||
+                (!isNFTPool && valNumber.eq(0)) ||
+                (!isNFTPool && valNumber.gt(fullBalanceNumber))
+              }
             >
               {t("Confirm")}
-            </Button>
-          </ModalActions>
+            </button>
+          </div>
         </div>
       </Modal>
       {pendingTx && <LogoLoading title="Pending Confirmation..." />}

@@ -218,7 +218,7 @@ export default function Swap() {
         </svg>
       </div>
       <div className="bg-secondary p-6 border border-[#18181b] rounded-xl shadow-xl">
-        <div className="tab">
+        <div className="tab border-b border-[#27272a] pb-2">
           <div className="flex justify-center">
             <div className="tab_panel">
               <div
@@ -238,7 +238,7 @@ export default function Swap() {
           <div className="flex justify-center"></div>
         </div>
         {active === 0 ? (
-          <Zapper />
+          <Zapper home={true}/>
         ) : (
           <div>
             <div className="p-6 rounded-xl">
@@ -265,42 +265,46 @@ export default function Swap() {
                   Trade tokens in on instant.
                 </p>
               </div>
-              <div className="border border-[#18181b] rounded-2xl p-8 space-y-6">
-                <ZapTokenSelect
-                  type="A"
-                  token={tokenA}
-                  selectOnly={false}
-                  amount={tokenAAmount}
-                  setOpen={setOpenA}
-                  setAmount={setTokenAAmount}
-                  setStates={handleSetTokenAAvailable}
-                  setInsufficient={handleSetInsufficientA}
-                  updateBalance={updateBalance}
-                  setDirection={() => {}}
-                  tokenType=""
-                />
+              <div className="glass border border-[#19191b] rounded-3xl p-8 overflow-hidden">
+                <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl"></div>
+                <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl"></div>
+                <div className="flex justify-between gap-10">
+                  <ZapTokenSelect
+                    type="A"
+                    token={tokenA}
+                    selectOnly={false}
+                    amount={tokenAAmount}
+                    setOpen={setOpenA}
+                    setAmount={setTokenAAmount}
+                    setStates={handleSetTokenAAvailable}
+                    setInsufficient={handleSetInsufficientA}
+                    updateBalance={updateBalance}
+                    setDirection={() => {}}
+                    tokenType=""
+                  />
 
-                <div className="flex justify-center">
-                  <button
-                    onClick={handleReverse}
-                    className="scale-100 hover:scale-110 transition ease-in-out"
-                  >
-                    <RiExchangeDollarLine className="text-3xl" />
-                  </button>
+                  <div className="flex justify-center border border-[#19191b] rounded-full my-20 p-2 glass">
+                    <button
+                      onClick={handleReverse}
+                      className="scale-100 hover:scale-110 transition ease-in-out"
+                    >
+                      <RiExchangeDollarLine className="text-3xl" />
+                    </button>
+                  </div>
+                  <ZapTokenSelect
+                    type="B"
+                    selectOnly={true}
+                    token={tokenB}
+                    amount={tokenBAmount}
+                    setOpen={setOpenB}
+                    setAmount={setTokenBAmount}
+                    setStates={handleSetTokenBAvailable}
+                    setInsufficient={handleSetInsufficientB}
+                    updateBalance={updateBalance}
+                    setDirection={() => {}}
+                    tokenType=""
+                  />
                 </div>
-                <ZapTokenSelect
-                  type="B"
-                  selectOnly={true}
-                  token={tokenB}
-                  amount={tokenBAmount}
-                  setOpen={setOpenB}
-                  setAmount={setTokenBAmount}
-                  setStates={handleSetTokenBAvailable}
-                  setInsufficient={handleSetInsufficientB}
-                  updateBalance={updateBalance}
-                  setDirection={() => {}}
-                  tokenType=""
-                />
                 <div className="px-20 mb-2">
                   {isCheckingAllowance ? (
                     <button className="banner_btn mt-8 hover:bg-symbolHover flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">

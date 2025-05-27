@@ -92,7 +92,7 @@ export default function  TokenSelect({
 
   return (
     <>
-      <div className="custom_input bg-primary/60">
+      <div className="custom_input bg-primary/60 border border-[#18181b] ">
         <div className="token_select min-w-max mr-3">
           <div
             onClick={() => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Loading from "components/Loading";
 import { Text, Button, Input, Link } from "uikit";
 import { useTranslation } from "context/Localization";
 import { BigNumber } from "bignumber.js";
@@ -28,6 +29,7 @@ const ModalInput = ({
   inputTitle,
   isNFTPool,
   decimals = 18,
+  tokenInfo,
 }) => {
   const [userBalance, setUserBalance] = useState("");
   const { address } = useAccount();
@@ -66,35 +68,39 @@ const ModalInput = ({
       if (balanceBigNumber.gt(0) && balanceBigNumber.lt(0.0001)) {
         setUserBalance(balanceBigNumber.toLocaleString());
       }
-      setUserBalance(balanceBigNumber.toFixed(3, BigNumber.ROUND_DOWN));
+      setUserBalance(balanceBigNumber.toFixed(4, BigNumber.ROUND_DOWN));
     }
   };
-
   useEffect(() => {
     if (address && signer) displayBalance(max);
   }, [address, signer, max]);
 
   return (
     <div className="relative">
-      <div className="flex items-center flex-col">
-        <div className="flex justify-center w-full mb-6 border-b border-gray-400 py-2">
-          <Text fontSize="25px" color="textWhite">
-            {inputTitle}
-          </Text>
+      <div className="flex items-center justify-center flex-col">
+        <div className="w-full mb-2 border-b border-[#27272a]">
+          <div className="flex justify-center w-full">
+          <img
+            src={tokenInfo?.logo}
+            alt="token"
+            className="rounded-full w-[60px] h-[60px] lg:w-[65px] lg:h-[65px] border-[2px] border-white mb-3"
+          />
         </div>
-        <div className="flex flex-row justify-between items-center pb-3 w-full">
-          <div>
-            <Text fontSize="16px" color="textWhite">
-              {symbol}
-            </Text>
-          </div>
-          <div>
-            <Text fontSize="15px" color="textWhite">
-              {t("Balance: %balance%", { balance: userBalance })}
-            </Text>
-          </div>
+       
         </div>
-        <div className="flex flex-row items-center justify-between w-full gap-3 py-3">
+        <div className="flex flex-row justify-between items-center pb-1 w-full text-gray-400">
+          <span ><span className="font-bold text-lg">{tokenInfo?.symbol}</span> Token</span> 
+          <div className="">
+            Available: <span className="text-white"> {userBalance}</span>
+            {/* {userBalance ? (
+              <Loading title="..." />
+            ) : (
+              Number(userBalance.toString()).toFixed(4)
+            )}{" "} */}
+          </div>
+          
+        </div>
+        <div className="flex justify-between items-center gap-2 w-full py-3 px-2">
           <input
             pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
             inputMode="decimal"
@@ -104,16 +110,17 @@ const ModalInput = ({
             type="text"
             onChange={(e) => onChange(e)}
             placeholder={isNFTPool ? "amount of NFT(s)" : "0.00"}
-            className="bg-transparent p-2 focus-visible:outline-none w-80px text-right px-2 border border-gray-500 rounded-md"
+            className="bg-transparent w-full p-2 focus-visible:outline-none text-right px-2 border border-gray-500 rounded-md"
             value={value}
           />
-          <Button
-            scale="sm"
-            onClick={onSelectMax}
-            className="pulse_bg text-[white!important]"
-          >
-            {t("Max")}
-          </Button>
+          <div className="flex items-center justify-center">
+            <button
+              className="text-gray-400 hover:text-gray-200 px-2 py-1 bg-secondary-600 cursor-pointer glass rounded-lg hover:scale-105 transition ease-in-out"
+              onClick={onSelectMax}
+            >
+              MAX
+            </button>
+          </div>
         </div>
       </div>
       {isBalanceZero && (

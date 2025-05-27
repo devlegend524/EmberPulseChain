@@ -351,7 +351,7 @@ export default function Home() {
       {renderContent()}
       <div ref={loadMoreRef} />
       <div className="flex justify-center mt-28">
-      <Zapper />
+      <Zapper home={false}/>
       </div>
     </div>
   );

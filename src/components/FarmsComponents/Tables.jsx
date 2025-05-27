@@ -15,7 +15,7 @@ export default function FarmTables(props) {
   return (
     <div
       ref={tableWrapperEl}
-      className="overflow-visible "
+      className="overflow-visible flex-col justify-center"
     >
       <motion.div 
           className="space-y-4"

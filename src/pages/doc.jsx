@@ -98,7 +98,7 @@ function Docs() {
             </p>
           </ExpandableCard>
         </div>
-        <div className="absolute -top-[35%] left-[15%]  w-full md:w-1/5 h-full opacity-15 -z-20 duration-300">
+        <div className="hidden md:absolute -top-[35%] left-[15%]  w-full md:w-1/5 h-full opacity-15 -z-20 duration-300">
           <svg
             viewBox="0 0 400 400"
             xmlns="http://www.w3.org/2000/svg"

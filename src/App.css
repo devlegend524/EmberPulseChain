@@ -159,8 +159,8 @@
       to bottom,
       transparent,
       transparent var(--fadeHeight),
-      black var(--fadeHeight),
-      black calc(100% - var(--fadeHeight)),
+      rgb(0, 0, 0) var(--fadeHeight),
+      rgb(177, 4, 4) calc(100% - var(--fadeHeight)),
       transparent
     );
 }

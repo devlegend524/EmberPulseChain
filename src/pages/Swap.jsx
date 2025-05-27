@@ -169,24 +169,45 @@ export default function Swap() {
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)]">
       <div className="fixed top-[44%] left-[15%] -z-10 w-full md:w-1/4 h-full opacity-15 duration-300">
-        <svg 
-          viewBox="0 0 400 400" 
-          xmlns="http://www.w3.org/2000/svg" 
+        <svg
+          viewBox="0 0 400 400"
+          xmlns="http://www.w3.org/2000/svg"
           className="h-full w-full"
         >
           <g opacity="0.8">
-            <circle cx="200" cy="200" r="150" stroke="#b280ff" strokeWidth="1" fill="none" />
-            <circle cx="200" cy="200" r="120" stroke="#8a3ffc" strokeWidth="1" fill="none" />
-            <circle cx="200" cy="200" r="90" stroke="#ff6b2b" strokeWidth="1" fill="none" />
-            
-            <path 
-              d="M200,50 L200,350 M50,200 L350,200" 
-              stroke="#8a3ffc" 
-              strokeWidth="0.5" 
+            <circle
+              cx="200"
+              cy="200"
+              r="150"
+              stroke="#b280ff"
+              strokeWidth="1"
+              fill="none"
+            />
+            <circle
+              cx="200"
+              cy="200"
+              r="120"
+              stroke="#8a3ffc"
+              strokeWidth="1"
+              fill="none"
+            />
+            <circle
+              cx="200"
+              cy="200"
+              r="90"
+              stroke="#ff6b2b"
+              strokeWidth="1"
+              fill="none"
+            />
+
+            <path
+              d="M200,50 L200,350 M50,200 L350,200"
+              stroke="#8a3ffc"
+              strokeWidth="0.5"
               opacity="0.3"
             />
-            
-             <g className="rotate">
+
+            <g className="rotate">
               <circle cx="140" cy="95" r="4" fill="#ff6b2b" />
               <circle cx="300" cy="140" r="4" fill="#8a3ffc" />
               <circle cx="200" cy="320" r="4" fill="#ff6b2b" />
@@ -215,17 +236,17 @@ export default function Swap() {
           </div>
           <div className="flex justify-center"></div>
         </div>
-        {active === 0 ?(
+        {active === 0 ? (
           <Zapper />
-        ):(
+        ) : (
           <div>
-            <div className="p-6 border border-[#18181b] rounded-xl">
-              <div className="border-b border-[#18181b] mb-4">
+            <div className="p-6 rounded-xl">
+              <div className=" mb-4">
                 <div className="flex justify-between items-center">
                   <div className="flex-1"></div>
                   <div className="flex-1 flex justify-center items-center">
                     <div className="block">
-                      <h1 className="text-center text-symbol text-2xl font-semibold">
+                      <h1 className="text-center text-symbol text-3xl font-bold">
                         SWAP
                       </h1>
                     </div>
@@ -243,71 +264,76 @@ export default function Swap() {
                   Trade tokens in on instant.
                 </p>
               </div>
-              <TokenSelect
-                type="A"
-                token={tokenA}
-                selectOnly={false}
-                amount={tokenAAmount}
-                setOpen={setOpenA}
-                setAmount={setTokenAAmount}
-                setStates={handleSetTokenAAvailable}
-                setInsufficient={handleSetInsufficientA}
-                updateBalance={updateBalance}
-                setDirection={() => { }}
-                tokenType=""
-              />
+              <div className="border border-[#18181b] rounded-2xl p-8 space-y-6">
+                <TokenSelect
+                  type="A"
+                  token={tokenA}
+                  selectOnly={false}
+                  amount={tokenAAmount}
+                  setOpen={setOpenA}
+                  setAmount={setTokenAAmount}
+                  setStates={handleSetTokenAAvailable}
+                  setInsufficient={handleSetInsufficientA}
+                  updateBalance={updateBalance}
+                  setDirection={() => {}}
+                  tokenType=""
+                />
 
-              <div className="flex justify-center">
+                <div className="flex justify-center">
                   <button
                     onClick={handleReverse}
                     className="scale-100 hover:scale-110 transition ease-in-out"
                   >
                     <RiExchangeDollarLine className="text-3xl" />
                   </button>
-              </div>
-              <TokenSelect
-                type="B"
-                selectOnly={true}
-                token={tokenB}
-                amount={tokenBAmount}
-                setOpen={setOpenB}
-                setAmount={setTokenBAmount}
-                setStates={handleSetTokenBAvailable}
-                setInsufficient={handleSetInsufficientB}
-                updateBalance={updateBalance}
-                setDirection={() => { }}
-                tokenType=""
-              />
-
-              {isCheckingAllowance ? (
-                <button className="banner_btn mt-8 hover:bg-symbolHover  flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
-                  <Loading title="Loading..." />
-                </button>
-              ) : (tokenA.lpSymbol !== "PLS" && Number(tokenAAllowance) === 0) ||
-                (tokenA.lpSymbol !== "PLS" &&
-                  Number(tokenAAllowance) < Number(tokenAAmount)) ? (
-                <button
-                  onClick={handleApprove}
-                  disabled={isApproving}
-                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
-                >
-                  Approve
-                </button>
-              ) : (
-                <button
-                  onClick={handleDeposit}
-                  disabled={
+                </div>
+                <TokenSelect
+                  type="B"
+                  selectOnly={true}
+                  token={tokenB}
+                  amount={tokenBAmount}
+                  setOpen={setOpenB}
+                  setAmount={setTokenBAmount}
+                  setStates={handleSetTokenBAvailable}
+                  setInsufficient={handleSetInsufficientB}
+                  updateBalance={updateBalance}
+                  setDirection={() => {}}
+                  tokenType=""
+                />
+                <div className="px-20 mb-2">
+                  {isCheckingAllowance ? (
+                    <button className="banner_btn mt-8 hover:bg-symbolHover flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700">
+                      <Loading title="Loading..." />
+                    </button>
+                  ) : (tokenA.lpSymbol !== "PLS" &&
+                      Number(tokenAAllowance) === 0) ||
                     (tokenA.lpSymbol !== "PLS" &&
-                      Number(tokenAAllowance) < Number(tokenAAmount)) ||
-                    status.insufficientA ||
-                    pendingTx ||
-                    isApproving
-                  }
-                  className="banner_btn mt-8 hover:bg-symbolHover disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
-                >
-                  {`Swap ${tokenA.lpSymbol} into ${tokenB.lpSymbol}`}
-                </button>
-              )}
+                      Number(tokenAAllowance) < Number(tokenAAmount)) ? (
+                    <button
+                      onClick={handleApprove}
+                      disabled={isApproving}
+                      className="banner_btn mt-8 hover:bg-symbolHover flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                    >
+                      Approve
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleDeposit}
+                      disabled={
+                        (tokenA.lpSymbol !== "PLS" &&
+                          Number(tokenAAllowance) < Number(tokenAAmount)) ||
+                        status.insufficientA ||
+                        pendingTx ||
+                        isApproving
+                      }
+                      className="banner_btn mt-8 hover:bg-symbolHover flex justify-center disabled:opacity-50 disabled:hover:scale-100  w-full rounded-lg transition ease-in-out p-[8px] bg-secondary-700"
+                    >
+                      {`Swap ${tokenA.lpSymbol} into ${tokenB.lpSymbol}`}
+                    </button>
+                  )}
+                </div>
+              </div>
+                Popular: 
             </div>
             {/* TokenA modal */}
             <TokenSelectModal
@@ -328,10 +354,8 @@ export default function Swap() {
           </div>
         )}
       </div>
-      {pendingTx &&
-        <LogoLoading title="Zapping..." />}
-      {isApproving &&
-        <LogoLoading title="Approving..." />}
+      {pendingTx && <LogoLoading title="Zapping..." />}
+      {isApproving && <LogoLoading title="Approving..." />}
     </div>
   );
 }

@@ -72,7 +72,7 @@ body {
 );
 }
 .zapin_btn {
-  @apply py-1 bg-[#f47825] text-white rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
+  @apply py-1 bg-[#f47825] hover:bg-[#e67122] text-white rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;
 }
 .banner_add_btn {
   @apply py-2 text-white font-semibold border border-[#27173b] rounded-lg text-center relative hover:text-white transition ease-in-out duration-500 hover:scale-105 shadow-xl;

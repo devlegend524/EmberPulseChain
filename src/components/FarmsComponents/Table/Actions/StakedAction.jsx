@@ -278,7 +278,7 @@ const StakedAction = ({
       </div>
       <div className="flex grid grid-cols-2 gap-3 w-full justify-center">
         <button
-          className="rounded-3xl w-full px-3 text-white text-center zapin_btn hover:bg-symbolHover"
+          className="rounded-3xl w-full px-3 text-white text-center zapin_btn"
           data-tooltip-id="zap-tooltip"
           data-tooltip-content="Stake to this pool from your wallet"
           disabled={!userDataReady}

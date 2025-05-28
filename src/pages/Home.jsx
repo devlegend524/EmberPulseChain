@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useRef,
 } from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import BigNumber from "bignumber.js";
 import FarmBanner from "components/FarmsComponents/Banner";
 import FarmStaking from "components/FarmsComponents/StakingInfo";
@@ -29,30 +29,51 @@ import Farms from "./Farms";
 
 export default function Home() {
   return (
-    <div className="justify-center w-full px-auto md:px-48 mt-16">
+    <div className="justify-center w-full px-auto my-auto md:mt-16">
       <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <div className="hidden md:block absolute -top-[35%] left-[55%]  w-full md:w-1/3 h-full opacity-15 -z-20 duration-300">
-          <svg 
-            viewBox="0 0 400 400" 
-            xmlns="http://www.w3.org/2000/svg" 
+          <svg
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
             className="h-full w-full"
           >
             <g opacity="0.8">
-              <circle cx="200" cy="200" r="150" stroke="#b280ff" strokeWidth="1" fill="none" />
-              <circle cx="200" cy="200" r="120" stroke="#8a3ffc" strokeWidth="1" fill="none" />
-              <circle cx="200" cy="200" r="90" stroke="#ff6b2b" strokeWidth="1" fill="none" />
-              
-              <path 
-                d="M200,50 L200,350 M50,200 L350,200" 
-                stroke="#8a3ffc" 
-                strokeWidth="0.5" 
+              <circle
+                cx="200"
+                cy="200"
+                r="150"
+                stroke="#b280ff"
+                strokeWidth="1"
+                fill="none"
+              />
+              <circle
+                cx="200"
+                cy="200"
+                r="120"
+                stroke="#8a3ffc"
+                strokeWidth="1"
+                fill="none"
+              />
+              <circle
+                cx="200"
+                cy="200"
+                r="90"
+                stroke="#ff6b2b"
+                strokeWidth="1"
+                fill="none"
+              />
+
+              <path
+                d="M200,50 L200,350 M50,200 L350,200"
+                stroke="#8a3ffc"
+                strokeWidth="0.5"
                 opacity="0.3"
               />
-              
+
               <g className="rotate">
                 <circle cx="200" cy="80" r="4" fill="#ff6b2b" />
                 <circle cx="320" cy="200" r="4" fill="#8a3ffc" />
@@ -63,15 +84,18 @@ export default function Home() {
           </svg>
         </div>
       </motion.div>
-      <div className="grid md:grid-cols-2 gap-20 items-center mb-20">
-        <FarmBanner />
-        <div className="md:ml-20 md:pl-20">
-        <TotalValueLocked />
+      <div className="flex justify-center w-full px-auto my-auto md:mt-12">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 lg:gap-16 justify-center items-center w-full  mb-20">
+          <FarmBanner />
+          <div className="lg:ml-20 lg:pl-20">
+            <TotalValueLocked />
+          </div>
         </div>
       </div>
-      <Farms home={false}/>
+
+      <Farms home={false} />
       <div className="flex justify-center mt-28">
-      <Zapper home={false}/>
+        <Zapper home={false} />
       </div>
     </div>
   );

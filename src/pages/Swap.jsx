@@ -220,7 +220,7 @@ export default function Swap() {
       <div className="md:bg-secondary p-6 border border-[#18181b] rounded-xl shadow-xl">
         <div className="tab border-b border-[#27272a] pb-2">
           <div className="flex justify-center">
-            <div className="tab_panel">
+            <div className="tab_panel border border-[#18181b]">
               <div
                 className={`tab_button ${active === 0 ? "active" : ""}`}
                 onClick={() => setActive(0)}

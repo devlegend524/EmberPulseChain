@@ -96,10 +96,7 @@ export const socials = [
 ];
 
 export const routes = [
-  {
-    name: "Home",
-    url: "/",
-  },
+
   {
     name: "Farms",
     url: "/farms",

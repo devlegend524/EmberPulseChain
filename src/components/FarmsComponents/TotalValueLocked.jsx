@@ -47,12 +47,13 @@ export default function TotalValueLocked() {
       className="rounded-3xl px-4"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.2}}
+      transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="glass p-8 rounded-3xl w-full stat-card relative overflow-hidden">
+      <div className="glass p-8 rounded-3xl w-full stat-card relative overflow-hidden shadow-xl">
         <div className="relative">
+          <div className="fixed -top-[2%] left-[93%] z-20  rounded-full h-[70px] w-[70px] bg-[#3f128d] blur-2xl opacity-70"></div>
+          <div className="fixed top-[80%] left-[1%] z-20  rounded-full h-[80px] w-[80px] bg-[#972a09e8] blur-3xl opacity-80"></div>
           <h2 className="text-xl font-semibold mb-8">EMBER Stats</h2>
-
           <div className="space-y-6">
             <div>
               <div className="flex justify-between text-sm text-white/70 mb-2">

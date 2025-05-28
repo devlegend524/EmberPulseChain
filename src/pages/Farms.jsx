@@ -297,7 +297,7 @@ export default function Farms({home}) {
   };
 
   return (
-    <div className={`flex justify-center  w-full px-auto ${home? "md:px-48":""} my-auto md:mt-12`}>
+    <div className={`flex justify-center w-full px-auto  my-auto md:mt-12`}>
       <div className={`fixed -top-[5%] left-[60%] -z-20 ${home? "block":"hidden"} w-full md:w-1/3 h-full opacity-15 duration-300`}>
         <svg 
           viewBox="0 0 400 400" 

@@ -63,16 +63,17 @@ export default function FarmBanner() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      className="flex flex-col justify-center"
     >
       <div className="flex-y justify-center">
-        <div className="px-3 md:py-10 text-left">
+        <div className="px-3 md:py-10 md:pr-20">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold mb-6 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h1 className="bg-gradient-to-r from-[#e879f9] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-4xl md:text-5xl mb-10">EARN EMBER</h1>
+            <h1 className="text-left bg-gradient-to-r from-[#e879f9] via-[#f59e0b] to-[#8b5cf6] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-4xl md:text-5xl mb-10">EARN EMBER</h1>
           </motion.h1>
           <motion.span
             className="text-lg text-white/80 mb-6 max-w-lg"
@@ -80,10 +81,10 @@ export default function FarmBanner() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <span className="">
-              Stake your tokens to earn EMBER as we build a new ecosystem of<br />
-              yield opportunities. All EMBER sales taxes are burned to reduce<br />
-              inflation, and there are no non-native coins for whales to dump.<br />
+            <span className="text-justify md:text-start">
+              Stake your tokens to earn EMBER as we build a new ecosystem of
+              yield opportunities. All EMBER sales taxes are burned to reduce
+              inflation, and there are no non-native coins for whales to dump.
             </span>
           </motion.span>
         </div>
@@ -93,7 +94,7 @@ export default function FarmBanner() {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <div className="flex-y justify-center items-center">
-            <div className="flex-y md:flex items-center justify-start px-3 gap-3 space-y-5 md:space-y-0 mt-8 md:mt-0">
+            <div className="flex items-center justify-start px-3 gap-3 mt-8 md:mt-0 text-xs md:text-md">
               <a
                 className="banner_btn flex justify-center items-center gap-2 px-8 border border-[#8b5cf6]"
                 href={`${BASE_SWAP_URL}?inputCurrency=${getWethAddress()}&outputCurrency=${getpWiLDAddress()}`}
@@ -107,7 +108,7 @@ export default function FarmBanner() {
                 className=" banner_add_btn flex justify-center items-center gap-2 px-8"
               >
                 Add EMBER to wallet
-                <FaPlus className="text-sm"/>
+                <FaPlus className="text-sm my-2"/>
               </button>
             </div>
             <div className="flex justify-start">

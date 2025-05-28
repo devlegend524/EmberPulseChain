@@ -84,7 +84,7 @@ export default function Home() {
           </svg>
         </div>
       </motion.div>
-      <div className="flex justify-center w-full px-auto my-auto md:mt-12">
+      <div className="flex justify-center w-full px-auto my-auto mt-12">
         <div className="container grid grid-cols-1 lg:grid-cols-2 lg:gap-16 justify-center items-center w-full  mb-20">
           <FarmBanner />
           <div className="lg:ml-20 lg:pl-20">
